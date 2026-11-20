@@ -12,6 +12,10 @@ from sqlalchemy import Boolean, DateTime, Float, ForeignKey, Integer, String, Te
 from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column, relationship, sessionmaker, Session
 
 DATABASE_URL = os.getenv('DATABASE_URL', 'postgresql+psycopg://kitchen:kitchen@db:5432/kitchen')
+if DATABASE_URL.startswith('postgres://'):
+    DATABASE_URL = DATABASE_URL.replace('postgres://', 'postgresql+psycopg://', 1)
+elif DATABASE_URL.startswith('postgresql://'):
+    DATABASE_URL = DATABASE_URL.replace('postgresql://', 'postgresql+psycopg://', 1)
 SECRET_KEY = os.getenv('SECRET_KEY', 'replace-this-secret-before-deploying')
 COOKIE_SECURE = os.getenv('COOKIE_SECURE', 'false').lower() == 'true'
 TOKEN_TTL_HOURS = int(os.getenv('TOKEN_TTL_HOURS', '12'))

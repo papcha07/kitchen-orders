@@ -35,6 +35,8 @@ services:
       context: .
       dockerfile: frontend/Dockerfile
     restart: unless-stopped
+    environment:
+      API_UPSTREAM: ${API_UPSTREAM:-api:8000}
     ports:
       - "${APP_PORT:-8080}:80"
     depends_on:
