@@ -95,7 +95,7 @@ class UserUpdate(BaseModel): name: str; role: str; active: bool=True; password: 
 class PasswordChangeIn(BaseModel): current_password: str; new_password: str = Field(min_length=8)
 class ProductIn(BaseModel): name: str; category: str; unit: Optional[str]=None; min_stock: Optional[float]=None; supplier_id: Optional[int]=None; active: bool=True
 class SupplierIn(BaseModel): name: str; active: bool=True
-class ItemIn(BaseModel): product_id: int; quantity: float=Field(gt=0); comment: Optional[str]=None
+class ItemIn(BaseModel): product_id: int; quantity: float=Field(gt=0); unit: Optional[str]=Field(default=None, max_length=40); comment: Optional[str]=None
 class OrderIn(BaseModel): items: list[ItemIn]=Field(min_length=1); planned_date: date=Field(default_factory=kitchen_today); comment: Optional[str]=None
 class ItemStatusIn(BaseModel): status: str
 class OrderUpdate(BaseModel): items: list[ItemIn]=Field(min_length=1); planned_date: date; comment: Optional[str]=None
@@ -254,7 +254,7 @@ def create_order(body: OrderIn, db: Session=Depends(get_db), u: User=Depends(req
     for entry in body.items:
         p=db.get(Product,entry.product_id)
         if not p or not p.active: raise HTTPException(400,'Один из товаров больше недоступен')
-        order.items.append(OrderItem(product_id=p.id,product_name=p.name,category=p.category,supplier_name=p.supplier.name if p.supplier else (p.source_supplier_label or None),quantity=entry.quantity,unit=p.unit,comment=entry.comment,status='К заказу'))
+        order.items.append(OrderItem(product_id=p.id,product_name=p.name,category=p.category,supplier_name=p.supplier.name if p.supplier else (p.source_supplier_label or None),quantity=entry.quantity,unit=(entry.unit.strip() if entry.unit and entry.unit.strip() else p.unit),comment=entry.comment,status='К заказу'))
     db.commit(); db.refresh(order); return order_json(order)
 
 @app.put('/api/orders/{order_id}')
@@ -272,7 +272,7 @@ def update_order(order_id: int, body: OrderUpdate, db: Session=Depends(get_db), 
     for entry in body.items:
         p=db.get(Product,entry.product_id)
         if not p or not p.active: raise HTTPException(400,'Один из товаров больше недоступен')
-        order.items.append(OrderItem(product_id=p.id,product_name=p.name,category=p.category,supplier_name=p.supplier.name if p.supplier else (p.source_supplier_label or None),quantity=entry.quantity,unit=p.unit,comment=entry.comment,status='К заказу'))
+        order.items.append(OrderItem(product_id=p.id,product_name=p.name,category=p.category,supplier_name=p.supplier.name if p.supplier else (p.source_supplier_label or None),quantity=entry.quantity,unit=(entry.unit.strip() if entry.unit and entry.unit.strip() else p.unit),comment=entry.comment,status='К заказу'))
     order.comment=body.comment
     order.planned_date=body.planned_date
     order.status='Отправлена'
