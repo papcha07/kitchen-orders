@@ -64,6 +64,7 @@ class Order(Base):
     author_id: Mapped[int]=mapped_column(ForeignKey('users.id'), index=True)
     created_at: Mapped[datetime]=mapped_column(DateTime(timezone=True), default=lambda: datetime.now(timezone.utc), index=True)
     status: Mapped[str]=mapped_column(String(30), default='Отправлена', index=True)
+    is_approved: Mapped[bool]=mapped_column(Boolean, default=False, nullable=False, index=True)
     comment: Mapped[Optional[str]]=mapped_column(Text, nullable=True)
     author: Mapped[User]=relationship()
     items: Mapped[list['OrderItem']]=relationship(cascade='all, delete-orphan', order_by='OrderItem.id')
@@ -91,6 +92,8 @@ class SupplierIn(BaseModel): name: str; active: bool=True
 class ItemIn(BaseModel): product_id: int; quantity: float=Field(gt=0); comment: Optional[str]=None
 class OrderIn(BaseModel): items: list[ItemIn]=Field(min_length=1); comment: Optional[str]=None
 class ItemStatusIn(BaseModel): status: str
+class OrderUpdate(BaseModel): items: list[ItemIn]=Field(min_length=1); comment: Optional[str]=None
+class OrderApprovalIn(BaseModel): is_approved: bool
 
 app=FastAPI(title='Kitchen Orders API', version='1.0.0')
 app.add_middleware(CORSMiddleware, allow_origins=os.getenv('CORS_ORIGINS','http://localhost:8080').split(','), allow_credentials=True, allow_methods=['*'], allow_headers=['*'])
@@ -103,7 +106,7 @@ def get_db():
 def user_json(u: User): return {'id':u.id,'name':u.name,'login':u.login,'role':u.role,'active':u.active,'must_change_password':u.must_change_password,'created_at':u.created_at.isoformat() if u.created_at else None}
 def product_json(p: Product): return {'id':p.id,'name':p.name,'category':p.category,'unit':p.unit,'min_stock':p.min_stock,'supplier_id':p.supplier_id,'supplier_name':p.supplier.name if p.supplier else None,'source_supplier_label':p.source_supplier_label,'needs_supplier':p.needs_supplier,'active':p.active}
 def order_json(o: Order):
-    return {'id':o.id,'author_id':o.author_id,'author_name':o.author.name,'created_at':o.created_at.isoformat(),'status':o.status,'comment':o.comment,'items':[{'id':i.id,'product_id':i.product_id,'name':i.product_name,'category':i.category,'supplier_name':i.supplier_name,'quantity':i.quantity,'unit':i.unit,'comment':i.comment,'status':i.status} for i in o.items]}
+    return {'id':o.id,'author_id':o.author_id,'author_name':o.author.name,'created_at':o.created_at.isoformat(),'status':o.status,'is_approved':o.is_approved,'comment':o.comment,'items':[{'id':i.id,'product_id':i.product_id,'name':i.product_name,'category':i.category,'supplier_name':i.supplier_name,'quantity':i.quantity,'unit':i.unit,'comment':i.comment,'status':i.status} for i in o.items]}
 
 from fastapi import Request
 def current_user(request: Request, db: Session=Depends(get_db)) -> User:
@@ -227,7 +230,7 @@ def update_user(user_id: int, body: UserUpdate, db: Session=Depends(get_db), u: 
 @app.post('/api/orders')
 def create_order(body: OrderIn, db: Session=Depends(get_db), u: User=Depends(require_role('souschef','chef'))):
     if len(body.items)>200: raise HTTPException(400,'В одной заявке может быть не более 200 позиций')
-    order=Order(author_id=u.id,status='Отправлена',comment=body.comment)
+    order=Order(author_id=u.id,status='Отправлена',is_approved=False,comment=body.comment)
     db.add(order); db.flush()
     for entry in body.items:
         p=db.get(Product,entry.product_id)
@@ -235,10 +238,41 @@ def create_order(body: OrderIn, db: Session=Depends(get_db), u: User=Depends(req
         order.items.append(OrderItem(product_id=p.id,product_name=p.name,category=p.category,supplier_name=p.supplier.name if p.supplier else (p.source_supplier_label or None),quantity=entry.quantity,unit=p.unit,comment=entry.comment,status='К заказу'))
     db.commit(); db.refresh(order); return order_json(order)
 
+@app.put('/api/orders/{order_id}')
+def update_order(order_id: int, body: OrderUpdate, db: Session=Depends(get_db), u: User=Depends(require_role('souschef','chef'))):
+    if len(body.items)>200: raise HTTPException(400,'В одной заявке может быть не более 200 позиций')
+    order=db.get(Order,order_id)
+    if not order: raise HTTPException(404,'Заявка не найдена')
+    if u.role=='souschef' and order.author_id!=u.id: raise HTTPException(403,'Можно редактировать только свои заявки')
+    if order.status=='Отменена': raise HTTPException(400,'Отменённую заявку нельзя изменить')
+    if any(item.status!='К заказу' for item in order.items):
+        raise HTTPException(400,'Закупщик уже начал обработку. Изменения этой заявки заблокированы')
+    order.items.clear()
+    db.flush()
+    for entry in body.items:
+        p=db.get(Product,entry.product_id)
+        if not p or not p.active: raise HTTPException(400,'Один из товаров больше недоступен')
+        order.items.append(OrderItem(product_id=p.id,product_name=p.name,category=p.category,supplier_name=p.supplier.name if p.supplier else (p.source_supplier_label or None),quantity=entry.quantity,unit=p.unit,comment=entry.comment,status='К заказу'))
+    order.comment=body.comment
+    order.status='Отправлена'
+    order.is_approved=False
+    db.commit(); db.refresh(order); return order_json(order)
+
+@app.patch('/api/orders/{order_id}/approval')
+def update_order_approval(order_id: int, body: OrderApprovalIn, db: Session=Depends(get_db), u: User=Depends(require_role('chef'))):
+    order=db.get(Order,order_id)
+    if not order: raise HTTPException(404,'Заявка не найдена')
+    if order.status=='Отменена': raise HTTPException(400,'Отменённую заявку нельзя согласовать')
+    if not body.is_approved and any(item.status!='К заказу' for item in order.items):
+        raise HTTPException(400,'Закупщик уже начал обработку. Согласование нельзя снять')
+    order.is_approved=body.is_approved
+    db.commit(); db.refresh(order); return order_json(order)
+
 @app.get('/api/orders')
 def list_orders(status: str='', date_from: Optional[str]=None,date_to: Optional[str]=None, db: Session=Depends(get_db), u: User=Depends(current_user)):
     q=db.query(Order)
     if u.role=='souschef': q=q.filter(Order.author_id==u.id)
+    if u.role=='provisioner': q=q.filter(Order.is_approved.is_(True))
     if status: q=q.filter(Order.status==status)
     if date_from:
         try: q=q.filter(Order.created_at>=datetime.fromisoformat(date_from).replace(tzinfo=timezone.utc))
@@ -253,8 +287,9 @@ def update_item_status(item_id: int, body: ItemStatusIn, db: Session=Depends(get
     if body.status not in ('К заказу','Заказано','Получено','Нужно уточнить'): raise HTTPException(400,'Недопустимый статус позиции')
     item=db.get(OrderItem,item_id)
     if not item: raise HTTPException(404,'Позиция не найдена')
-    item.status=body.status
     order=db.get(Order,item.order_id)
+    if not order.is_approved: raise HTTPException(400,'Заявка ещё не согласована шеф-поваром')
+    item.status=body.status
     statuses={i.status for i in order.items}
     order.status='Выполнена' if statuses=={'Получено'} else 'В работе'
     db.commit(); return {'ok':True,'status':item.status,'order_status':order.status}
