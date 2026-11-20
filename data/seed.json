@@ -1,0 +1,2697 @@
+{
+  "suppliers": [
+    "OZON",
+    "Восток-Запад",
+    "Глобал Фуд",
+    "глобал Фуд",
+    "дикоросы/озон",
+    "Женя",
+    "Завацкая",
+    "Заячий Погребок",
+    "Идрисова",
+    "Краснов",
+    "Лазарев ИП",
+    "Лобанов ИП",
+    "Максимус/Метро",
+    "Ментро",
+    "Метро",
+    "метро",
+    "Метро/Ярошенко",
+    "Мираторг",
+    "Назаров ИП",
+    "Назаров Ип",
+    "НЕ УКАЗАН",
+    "новосибирск",
+    "Озон",
+    "Паттра",
+    "Самокат/Лента/Командор",
+    "Самокат/Метро",
+    "Сосновский",
+    "СТК",
+    "Через ХП",
+    "Чип и дип",
+    "элит трейд",
+    "Элит Трейд",
+    "Элит трейд",
+    "Элит Трейд/Восток-Запад",
+    "ЭлитТрейд",
+    "ЭлитТрейд/Восток-запад",
+    "ЭлитТрейд/Дикоросы",
+    "ЭлитТрейд/Метро",
+    "Ярошенко"
+  ],
+  "products": [
+    {
+      "name": "ГОВЯДИНА ДЛЯ БРИСКЕТА",
+      "category": "МЯСНЫЕ ПРОДУКТЫ",
+      "supplier_name": "ЭлитТрейд",
+      "min_stock": 80.0,
+      "unit": null,
+      "needs_supplier": false,
+      "source": "Продукты"
+    },
+    {
+      "name": "ГОВЯДИНА РИБАЙ (толстый край) отруб",
+      "category": "МЯСНЫЕ ПРОДУКТЫ",
+      "supplier_name": "Мираторг",
+      "min_stock": 8.0,
+      "unit": null,
+      "needs_supplier": false,
+      "source": "Продукты"
+    },
+    {
+      "name": "ГОВЯДИНА СТРИПЛОИН (ТОНКИЙ КРАЙ) отруб",
+      "category": "МЯСНЫЕ ПРОДУКТЫ",
+      "supplier_name": "Мираторг",
+      "min_stock": 8.0,
+      "unit": null,
+      "needs_supplier": false,
+      "source": "Продукты"
+    },
+    {
+      "name": "ГОВЯДИНА ГОЛЯШКА",
+      "category": "МЯСНЫЕ ПРОДУКТЫ",
+      "supplier_name": "Лобанов ИП",
+      "min_stock": 40.0,
+      "unit": null,
+      "needs_supplier": false,
+      "source": "Продукты"
+    },
+    {
+      "name": "ГОВЯДИНА КОСТИ",
+      "category": "МЯСНЫЕ ПРОДУКТЫ",
+      "supplier_name": "Лобанов ИП",
+      "min_stock": 40.0,
+      "unit": null,
+      "needs_supplier": false,
+      "source": "Продукты"
+    },
+    {
+      "name": "ГОВЯДИНА СТРИПЛОИН мат. забой/Травяной откорм.",
+      "category": "МЯСНЫЕ ПРОДУКТЫ",
+      "supplier_name": "ЭлитТрейд",
+      "min_stock": 20.0,
+      "unit": null,
+      "needs_supplier": false,
+      "source": "Продукты"
+    },
+    {
+      "name": "ГОВЯДИНА ГЛАЗНОЙ МУСКУЛ",
+      "category": "МЯСНЫЕ ПРОДУКТЫ",
+      "supplier_name": "Мираторг",
+      "min_stock": 20.0,
+      "unit": null,
+      "needs_supplier": false,
+      "source": "Продукты"
+    },
+    {
+      "name": "ГОВЯДИНА ЯЗЫК",
+      "category": "МЯСНЫЕ ПРОДУКТЫ",
+      "supplier_name": "ЭлитТрейд",
+      "min_stock": 20.0,
+      "unit": null,
+      "needs_supplier": false,
+      "source": "Продукты"
+    },
+    {
+      "name": "ГОВЯДИНА ВЫРЕЗКА",
+      "category": "МЯСНЫЕ ПРОДУКТЫ",
+      "supplier_name": "Лобанов ИП",
+      "min_stock": 20.0,
+      "unit": null,
+      "needs_supplier": false,
+      "source": "Продукты"
+    },
+    {
+      "name": "КУРИЦА БЕДРО БОЛЬШОЕ Б\\К",
+      "category": "МЯСНЫЕ ПРОДУКТЫ",
+      "supplier_name": "Лазарев ИП",
+      "min_stock": 20.0,
+      "unit": null,
+      "needs_supplier": false,
+      "source": "Продукты"
+    },
+    {
+      "name": "ГРУДКА КУРИНАЯ НА КОСТИ",
+      "category": "МЯСНЫЕ ПРОДУКТЫ",
+      "supplier_name": "Лазарев ИП",
+      "min_stock": 10.0,
+      "unit": null,
+      "needs_supplier": false,
+      "source": "Продукты"
+    },
+    {
+      "name": "ИНДЕЙКА БЕДРО на коже",
+      "category": "МЯСНЫЕ ПРОДУКТЫ",
+      "supplier_name": "элит трейд",
+      "min_stock": null,
+      "unit": null,
+      "needs_supplier": true,
+      "source": "Продукты"
+    },
+    {
+      "name": "КУРИЦА НАБОР ДЛЯ БУЛЬОНА",
+      "category": "МЯСНЫЕ ПРОДУКТЫ",
+      "supplier_name": "Лазарев ИП",
+      "min_stock": 30.0,
+      "unit": null,
+      "needs_supplier": false,
+      "source": "Продукты"
+    },
+    {
+      "name": "КУРИЦА ФИЛЕ",
+      "category": "МЯСНЫЕ ПРОДУКТЫ",
+      "supplier_name": "ЭлитТрейд",
+      "min_stock": 40.0,
+      "unit": null,
+      "needs_supplier": false,
+      "source": "Продукты"
+    },
+    {
+      "name": "СВИНИНА РЕБРА СЫРЫЕ",
+      "category": "МЯСНЫЕ ПРОДУКТЫ",
+      "supplier_name": "Назаров ИП",
+      "min_stock": 20.0,
+      "unit": null,
+      "needs_supplier": false,
+      "source": "Продукты"
+    },
+    {
+      "name": "СВИНИНА ШЕЯ С/М",
+      "category": "МЯСНЫЕ ПРОДУКТЫ",
+      "supplier_name": "Назаров ИП",
+      "min_stock": 40.0,
+      "unit": null,
+      "needs_supplier": false,
+      "source": "Продукты"
+    },
+    {
+      "name": "СВИНИНА ГРУДИНА БЕКОН",
+      "category": "МЯСНЫЕ ПРОДУКТЫ",
+      "supplier_name": "Назаров ИП",
+      "min_stock": 30.0,
+      "unit": null,
+      "needs_supplier": false,
+      "source": "Продукты"
+    },
+    {
+      "name": "СВИНИНА (САЛО)",
+      "category": "МЯСНЫЕ ПРОДУКТЫ",
+      "supplier_name": "Назаров Ип",
+      "min_stock": 10.0,
+      "unit": null,
+      "needs_supplier": false,
+      "source": "Продукты"
+    },
+    {
+      "name": "БАРАНИНА филе (окорок)",
+      "category": "МЯСНЫЕ ПРОДУКТЫ",
+      "supplier_name": "НЕ УКАЗАН",
+      "min_stock": null,
+      "unit": null,
+      "needs_supplier": true,
+      "source": "Продукты"
+    },
+    {
+      "name": "УТКА ФИЛЕ грудки СМ",
+      "category": "МЯСНЫЕ ПРОДУКТЫ",
+      "supplier_name": "ЭлитТрейд",
+      "min_stock": 15.0,
+      "unit": null,
+      "needs_supplier": false,
+      "source": "Продукты"
+    },
+    {
+      "name": "ФИЛЕ ИНДЕЙКИ",
+      "category": "МЯСНЫЕ ПРОДУКТЫ",
+      "supplier_name": "ЭлитТрейд",
+      "min_stock": null,
+      "unit": null,
+      "needs_supplier": false,
+      "source": "Продукты"
+    },
+    {
+      "name": "КОЛБАСА ПЕППЕРОНИ",
+      "category": "МЯСНЫЕ ПРОДУКТЫ",
+      "supplier_name": "Метро",
+      "min_stock": 5.0,
+      "unit": null,
+      "needs_supplier": false,
+      "source": "Продукты"
+    },
+    {
+      "name": "ПЕЧЕНЬ КУРИНАЯ",
+      "category": "МЯСНЫЕ ПРОДУКТЫ",
+      "supplier_name": "Метро",
+      "min_stock": 5.0,
+      "unit": null,
+      "needs_supplier": false,
+      "source": "Продукты"
+    },
+    {
+      "name": "ИНДЕЙКА ФИЛЕ грудки",
+      "category": "МЯСНЫЕ ПРОДУКТЫ",
+      "supplier_name": "элит трейд",
+      "min_stock": null,
+      "unit": null,
+      "needs_supplier": true,
+      "source": "Продукты"
+    },
+    {
+      "name": "СМОРОДИНА ЧЕРНАЯ С/М",
+      "category": "ГРИБЫ СМОРЧКИ С/М",
+      "supplier_name": "элит трейд",
+      "min_stock": 10.0,
+      "unit": null,
+      "needs_supplier": true,
+      "source": "Продукты"
+    },
+    {
+      "name": "МАСЛО СЛИВОЧНОЕ RENFERLI 82,5%",
+      "category": "ЙОГУРТ ГРЕЧЕСКИЙ",
+      "supplier_name": "ЭлитТрейд",
+      "min_stock": 20.0,
+      "unit": null,
+      "needs_supplier": false,
+      "source": "Продукты"
+    },
+    {
+      "name": "МОЛОКО дл.хр. 2,5%",
+      "category": "ЙОГУРТ ГРЕЧЕСКИЙ",
+      "supplier_name": "ЭлитТрейд",
+      "min_stock": null,
+      "unit": null,
+      "needs_supplier": false,
+      "source": "Продукты"
+    },
+    {
+      "name": "МОРОЖЕНОЕ пломбир",
+      "category": "МОЛОКО СГУЩЕННОЕ вареное",
+      "supplier_name": "ЭлитТрейд",
+      "min_stock": null,
+      "unit": null,
+      "needs_supplier": false,
+      "source": "Продукты"
+    },
+    {
+      "name": "СЛИВКИ ЖИДКИЕ 33% для кухни",
+      "category": "СЛИВКИ ЖИДКИЕ 10%",
+      "supplier_name": "ЭлитТрейд/Восток-запад",
+      "min_stock": null,
+      "unit": null,
+      "needs_supplier": true,
+      "source": "Продукты"
+    },
+    {
+      "name": "СЛИВКИ ПЕТМОЛ 33%",
+      "category": "СЛИВКИ ЖИДКИЕ 10%",
+      "supplier_name": "ЭлитТрейд",
+      "min_stock": null,
+      "unit": null,
+      "needs_supplier": false,
+      "source": "Продукты"
+    },
+    {
+      "name": "СМЕТАНА 20%",
+      "category": "СЛИВКИ ЖИДКИЕ 10%",
+      "supplier_name": "Метро",
+      "min_stock": 5.0,
+      "unit": null,
+      "needs_supplier": false,
+      "source": "Продукты"
+    },
+    {
+      "name": "СЫР БРИ",
+      "category": "СЛИВКИ ЖИДКИЕ 10%",
+      "supplier_name": "Метро",
+      "min_stock": null,
+      "unit": null,
+      "needs_supplier": false,
+      "source": "Продукты"
+    },
+    {
+      "name": "СЫР БРЫНЗА",
+      "category": "СЛИВКИ ЖИДКИЕ 10%",
+      "supplier_name": "Идрисова",
+      "min_stock": 6.0,
+      "unit": null,
+      "needs_supplier": false,
+      "source": "Продукты"
+    },
+    {
+      "name": "СЫР МОЦАРЕЛЛА Profi Cheese",
+      "category": "СЛИВКИ ЖИДКИЕ 10%",
+      "supplier_name": "ЭлитТрейд",
+      "min_stock": null,
+      "unit": null,
+      "needs_supplier": false,
+      "source": "Продукты"
+    },
+    {
+      "name": "СЫР МОЦАРЕЛЛА бол. шарики в рассоле",
+      "category": "СЛИВКИ ЖИДКИЕ 10%",
+      "supplier_name": "Метро",
+      "min_stock": null,
+      "unit": null,
+      "needs_supplier": false,
+      "source": "Продукты"
+    },
+    {
+      "name": "СЫР ПАРМЕЗАН ДЖУГАС",
+      "category": "СЛИВКИ ЖИДКИЕ 10%",
+      "supplier_name": "ЭлитТрейд",
+      "min_stock": 7.0,
+      "unit": null,
+      "needs_supplier": false,
+      "source": "Продукты"
+    },
+    {
+      "name": "СЫР ПЛАВЛЕНЫЙ",
+      "category": "СЛИВКИ ЖИДКИЕ 10%",
+      "supplier_name": "ЭлитТрейд",
+      "min_stock": null,
+      "unit": null,
+      "needs_supplier": false,
+      "source": "Продукты"
+    },
+    {
+      "name": "СЫР С ГОЛУБОЙ ПЛЕСЕНЬЮ",
+      "category": "СЛИВКИ ЖИДКИЕ 10%",
+      "supplier_name": "ЭлитТрейд",
+      "min_stock": 15.0,
+      "unit": null,
+      "needs_supplier": false,
+      "source": "Продукты"
+    },
+    {
+      "name": "СЫР СУЛУГУНИ",
+      "category": "СЛИВКИ ЖИДКИЕ 10%",
+      "supplier_name": "Ярошенко",
+      "min_stock": 5.0,
+      "unit": null,
+      "needs_supplier": false,
+      "source": "Продукты"
+    },
+    {
+      "name": "СЫР ФЕТА Хохланд",
+      "category": "СЛИВКИ ЖИДКИЕ 10%",
+      "supplier_name": "ЭлитТрейд",
+      "min_stock": 3.0,
+      "unit": null,
+      "needs_supplier": false,
+      "source": "Продукты"
+    },
+    {
+      "name": "СЫР-КРЕМ ТВОРОЖНЫЙ",
+      "category": "СЛИВКИ ЖИДКИЕ 10%",
+      "supplier_name": "ЭлитТрейд",
+      "min_stock": null,
+      "unit": null,
+      "needs_supplier": false,
+      "source": "Продукты"
+    },
+    {
+      "name": "МОЛОКО КОКОСОВОЕ",
+      "category": "СЛИВКИ ЖИДКИЕ 10%",
+      "supplier_name": "ЭлитТрейд",
+      "min_stock": 5.0,
+      "unit": null,
+      "needs_supplier": false,
+      "source": "Продукты"
+    },
+    {
+      "name": "ИКРА СЕЛЬДИ",
+      "category": "РЫБНЫЕ ПРОДУКТЫ",
+      "supplier_name": "СТК",
+      "min_stock": 1.0,
+      "unit": null,
+      "needs_supplier": false,
+      "source": "Продукты"
+    },
+    {
+      "name": "КАЛЬМАР ТУШКИ Чищенный",
+      "category": "РЫБНЫЕ ПРОДУКТЫ",
+      "supplier_name": "ЭлитТрейд",
+      "min_stock": 10.0,
+      "unit": null,
+      "needs_supplier": false,
+      "source": "Продукты"
+    },
+    {
+      "name": "КАРКАСЫ РЫБНЫЕ",
+      "category": "РЫБНЫЕ ПРОДУКТЫ",
+      "supplier_name": "НЕ УКАЗАН",
+      "min_stock": 10.0,
+      "unit": null,
+      "needs_supplier": true,
+      "source": "Продукты"
+    },
+    {
+      "name": "КИЛЬКА В РАССОЛЕ",
+      "category": "РЫБНЫЕ ПРОДУКТЫ",
+      "supplier_name": "СТК",
+      "min_stock": 4.0,
+      "unit": null,
+      "needs_supplier": false,
+      "source": "Продукты"
+    },
+    {
+      "name": "КРЕВЕТКИ 26/30 ЧИЩЕННЫЕ",
+      "category": "РЫБНЫЕ ПРОДУКТЫ",
+      "supplier_name": "ЭлитТрейд",
+      "min_stock": null,
+      "unit": null,
+      "needs_supplier": false,
+      "source": "Продукты"
+    },
+    {
+      "name": "ЛОСОСЬ СМ филе на коже",
+      "category": "РЫБНЫЕ ПРОДУКТЫ",
+      "supplier_name": "ЭлитТрейд",
+      "min_stock": 10.0,
+      "unit": null,
+      "needs_supplier": false,
+      "source": "Продукты"
+    },
+    {
+      "name": "МИДИИ в с/соку в створках",
+      "category": "РЫБНЫЕ ПРОДУКТЫ",
+      "supplier_name": "ЭлитТрейд",
+      "min_stock": 10.0,
+      "unit": null,
+      "needs_supplier": false,
+      "source": "Продукты"
+    },
+    {
+      "name": "МЯСО МИДИЙ",
+      "category": "РЫБНЫЕ ПРОДУКТЫ",
+      "supplier_name": "Элит Трейд",
+      "min_stock": null,
+      "unit": null,
+      "needs_supplier": false,
+      "source": "Продукты"
+    },
+    {
+      "name": "МИНТАЙ СВ/М",
+      "category": "РЫБНЫЕ ПРОДУКТЫ",
+      "supplier_name": "ЭлитТрейд",
+      "min_stock": null,
+      "unit": null,
+      "needs_supplier": false,
+      "source": "Продукты"
+    },
+    {
+      "name": "СЕЛЬДЬ ФИЛЕ в масле",
+      "category": "РЫБНЫЕ ПРОДУКТЫ",
+      "supplier_name": "СТК",
+      "min_stock": 0.5,
+      "unit": null,
+      "needs_supplier": false,
+      "source": "Продукты"
+    },
+    {
+      "name": "СКУМБРИЯ С/М",
+      "category": "РЫБНЫЕ ПРОДУКТЫ",
+      "supplier_name": "НЕ УКАЗАН",
+      "min_stock": null,
+      "unit": null,
+      "needs_supplier": true,
+      "source": "Продукты"
+    },
+    {
+      "name": "ТРЕСКА ФИЛЕ без кожи",
+      "category": "РЫБНЫЕ ПРОДУКТЫ",
+      "supplier_name": "Элит Трейд/Восток-Запад",
+      "min_stock": 5.0,
+      "unit": null,
+      "needs_supplier": true,
+      "source": "Продукты"
+    },
+    {
+      "name": "ТУНЕЦ филе ЛОИН С/М",
+      "category": "РЫБНЫЕ ПРОДУКТЫ",
+      "supplier_name": "Элит Трейд",
+      "min_stock": 10.0,
+      "unit": null,
+      "needs_supplier": false,
+      "source": "Продукты"
+    },
+    {
+      "name": "ГОРБУША ФИЛЕ НА КОЖЕ",
+      "category": "РЫБНЫЕ ПРОДУКТЫ",
+      "supplier_name": "Элит Трейд",
+      "min_stock": null,
+      "unit": null,
+      "needs_supplier": false,
+      "source": "Продукты"
+    },
+    {
+      "name": "ОКУНЬ МОРСКОЙ ФИЛЕ с\\м",
+      "category": "РЫБНЫЕ ПРОДУКТЫ",
+      "supplier_name": "ЭлитТрейд",
+      "min_stock": null,
+      "unit": null,
+      "needs_supplier": false,
+      "source": "Продукты"
+    },
+    {
+      "name": "ФОРЕЛЬ ФИЛЕ С\\С",
+      "category": "РЫБНЫЕ ПРОДУКТЫ",
+      "supplier_name": "Восток-Запад",
+      "min_stock": 10.0,
+      "unit": null,
+      "needs_supplier": false,
+      "source": "Продукты"
+    },
+    {
+      "name": "БРОККОЛИ",
+      "category": "Грибы/ягоды замороженые",
+      "supplier_name": "ЭлитТрейд",
+      "min_stock": null,
+      "unit": null,
+      "needs_supplier": false,
+      "source": "Продукты"
+    },
+    {
+      "name": "ГРИБЫ БЕЛЫЕ",
+      "category": "Грибы/ягоды замороженые",
+      "supplier_name": "Паттра",
+      "min_stock": null,
+      "unit": null,
+      "needs_supplier": false,
+      "source": "Продукты"
+    },
+    {
+      "name": "ОПЯТА С/М",
+      "category": "Грибы/ягоды замороженые",
+      "supplier_name": "ЭлитТрейд",
+      "min_stock": null,
+      "unit": null,
+      "needs_supplier": false,
+      "source": "Продукты"
+    },
+    {
+      "name": "ГРУЗДИ С,С",
+      "category": "Грибы/ягоды замороженые",
+      "supplier_name": "Завацкая",
+      "min_stock": null,
+      "unit": null,
+      "needs_supplier": false,
+      "source": "Продукты"
+    },
+    {
+      "name": "ОБЛЕПИХА СМ",
+      "category": "Грибы/ягоды замороженые",
+      "supplier_name": "ЭлитТрейд/Дикоросы",
+      "min_stock": null,
+      "unit": null,
+      "needs_supplier": true,
+      "source": "Продукты"
+    },
+    {
+      "name": "ЧЕРНАЯ СМОРОДИНА СМ",
+      "category": "Грибы/ягоды замороженые",
+      "supplier_name": "Элит Трейд",
+      "min_stock": null,
+      "unit": null,
+      "needs_supplier": false,
+      "source": "Продукты"
+    },
+    {
+      "name": "БЕЛЫЙ ГРИБ СУХОЙ",
+      "category": "Грибы/ягоды замороженые",
+      "supplier_name": "дикоросы/озон",
+      "min_stock": null,
+      "unit": null,
+      "needs_supplier": true,
+      "source": "Продукты"
+    },
+    {
+      "name": "ЦВЕТЕАЯ КАПУСТА см",
+      "category": "Грибы/ягоды замороженые",
+      "supplier_name": "ЭлитТрейд",
+      "min_stock": null,
+      "unit": null,
+      "needs_supplier": false,
+      "source": "Продукты"
+    },
+    {
+      "name": "ФАСОЛЬ СТРУЧКОВАЯ см",
+      "category": "Грибы/ягоды замороженые",
+      "supplier_name": "ЭлитТрейд",
+      "min_stock": null,
+      "unit": null,
+      "needs_supplier": false,
+      "source": "Продукты"
+    },
+    {
+      "name": "КУКУРУЗА ПОЧАТКИ",
+      "category": "Грибы/ягоды замороженые",
+      "supplier_name": "ЭлитТрейд",
+      "min_stock": null,
+      "unit": null,
+      "needs_supplier": false,
+      "source": "Продукты"
+    },
+    {
+      "name": "КАРТОФЕЛЬ ФРИ 6х6",
+      "category": "Грибы/ягоды замороженые",
+      "supplier_name": "Элит Трейд",
+      "min_stock": null,
+      "unit": null,
+      "needs_supplier": false,
+      "source": "Продукты"
+    },
+    {
+      "name": "ВИШНЯ см",
+      "category": "Грибы/ягоды замороженые",
+      "supplier_name": "ЭлитТрейд/Дикоросы",
+      "min_stock": null,
+      "unit": null,
+      "needs_supplier": true,
+      "source": "Продукты"
+    },
+    {
+      "name": "БРУСНИКА с\\м",
+      "category": "Грибы/ягоды замороженые",
+      "supplier_name": "ЭлитТрейд/Дикоросы",
+      "min_stock": null,
+      "unit": null,
+      "needs_supplier": true,
+      "source": "Продукты"
+    },
+    {
+      "name": "КЕТЧУП (Хайнс)",
+      "category": "Соусы",
+      "supplier_name": "ЭлитТрейд",
+      "min_stock": null,
+      "unit": null,
+      "needs_supplier": false,
+      "source": "Продукты"
+    },
+    {
+      "name": "СОУС ГОРЧИЧНЫЙ (Хайнс)",
+      "category": "Соусы",
+      "supplier_name": "ЭлитТрейд",
+      "min_stock": null,
+      "unit": null,
+      "needs_supplier": false,
+      "source": "Продукты"
+    },
+    {
+      "name": "СОУС УСТРИЧНЫЙ",
+      "category": "Соусы",
+      "supplier_name": "ЭлитТрейд",
+      "min_stock": null,
+      "unit": null,
+      "needs_supplier": false,
+      "source": "Продукты"
+    },
+    {
+      "name": "СОУС ТОНКАЦУ",
+      "category": "Соусы",
+      "supplier_name": "Элит Трейд",
+      "min_stock": null,
+      "unit": null,
+      "needs_supplier": false,
+      "source": "Продукты"
+    },
+    {
+      "name": "ПАСТА ТОМ ЯМ (для супа)",
+      "category": "Соусы",
+      "supplier_name": "Метро",
+      "min_stock": null,
+      "unit": null,
+      "needs_supplier": false,
+      "source": "Продукты"
+    },
+    {
+      "name": "СОУС ТЕРИЯКИ",
+      "category": "Соусы",
+      "supplier_name": "ЭлитТрейд",
+      "min_stock": null,
+      "unit": null,
+      "needs_supplier": false,
+      "source": "Продукты"
+    },
+    {
+      "name": "СОУС СОЕВЫЙ CHO",
+      "category": "Соусы",
+      "supplier_name": "ЭлитТрейд",
+      "min_stock": null,
+      "unit": null,
+      "needs_supplier": false,
+      "source": "Продукты"
+    },
+    {
+      "name": "СОУС РЫБНЫЙ (тайское меню)",
+      "category": "Соусы",
+      "supplier_name": "Метро",
+      "min_stock": null,
+      "unit": null,
+      "needs_supplier": false,
+      "source": "Продукты"
+    },
+    {
+      "name": "СОУС ШРИРАЧА",
+      "category": "Соусы",
+      "supplier_name": "ЭлитТрейд/Метро",
+      "min_stock": null,
+      "unit": null,
+      "needs_supplier": true,
+      "source": "Продукты"
+    },
+    {
+      "name": "ГОРЧИЦА в зернах",
+      "category": "Соусы",
+      "supplier_name": "Метро",
+      "min_stock": null,
+      "unit": null,
+      "needs_supplier": false,
+      "source": "Продукты"
+    },
+    {
+      "name": "СОУС ГАЛЬБИ BBQ",
+      "category": "Соусы",
+      "supplier_name": "Метро",
+      "min_stock": null,
+      "unit": null,
+      "needs_supplier": false,
+      "source": "Продукты"
+    },
+    {
+      "name": "ГОРЧИЦА Русская",
+      "category": "Соусы",
+      "supplier_name": "ЭлитТрейд",
+      "min_stock": null,
+      "unit": null,
+      "needs_supplier": false,
+      "source": "Продукты"
+    },
+    {
+      "name": "ТОМАТНАЯ ПАСТА ПОМИДОРКА",
+      "category": "Соусы",
+      "supplier_name": "ЭлитТрейд",
+      "min_stock": null,
+      "unit": null,
+      "needs_supplier": false,
+      "source": "Продукты"
+    },
+    {
+      "name": "СОУС КИМЧИ",
+      "category": "Соусы",
+      "supplier_name": "ЭлитТрейд",
+      "min_stock": null,
+      "unit": null,
+      "needs_supplier": false,
+      "source": "Продукты"
+    },
+    {
+      "name": "УКСУС ВИННЫЙ БЕЛЫЙ",
+      "category": "УКСУС БАЛЬЗАМИЧЕСКИЙ",
+      "supplier_name": "ЭлитТрейд",
+      "min_stock": null,
+      "unit": null,
+      "needs_supplier": false,
+      "source": "Продукты"
+    },
+    {
+      "name": "УКСУС 70% эссенция",
+      "category": "УКСУС БАЛЬЗАМИЧЕСКИЙ",
+      "supplier_name": "ЭлитТрейд",
+      "min_stock": null,
+      "unit": null,
+      "needs_supplier": false,
+      "source": "Продукты"
+    },
+    {
+      "name": "МАСЛО ВАСАБИ",
+      "category": "УКСУС БАЛЬЗАМИЧЕСКИЙ",
+      "supplier_name": "Женя",
+      "min_stock": null,
+      "unit": null,
+      "needs_supplier": false,
+      "source": "Продукты"
+    },
+    {
+      "name": "ЯЙЦО куриное ДЕРЕВЕНСКОЕ",
+      "category": "ПРОЧИЕ ПРОДУКТЫ",
+      "supplier_name": "Сосновский",
+      "min_stock": 360.0,
+      "unit": null,
+      "needs_supplier": false,
+      "source": "Продукты"
+    },
+    {
+      "name": "ЯЙЦО ПЕРЕПЕЛИНОЕ",
+      "category": "ПРОЧИЕ ПРОДУКТЫ",
+      "supplier_name": "Сосновский",
+      "min_stock": 5.0,
+      "unit": null,
+      "needs_supplier": false,
+      "source": "Продукты"
+    },
+    {
+      "name": "ЩЕПА",
+      "category": "ПРОЧИЕ ПРОДУКТЫ",
+      "supplier_name": "Краснов",
+      "min_stock": null,
+      "unit": null,
+      "needs_supplier": false,
+      "source": "Продукты"
+    },
+    {
+      "name": "САХАР ТРОСТНИКОВЫЙ",
+      "category": "ПРОЧИЕ ПРОДУКТЫ",
+      "supplier_name": "Элит трейд",
+      "min_stock": 5.0,
+      "unit": null,
+      "needs_supplier": true,
+      "source": "Продукты"
+    },
+    {
+      "name": "САХАРНАЯ ПУДРА",
+      "category": "ПРОЧИЕ ПРОДУКТЫ",
+      "supplier_name": "Метро",
+      "min_stock": 2.0,
+      "unit": null,
+      "needs_supplier": true,
+      "source": "Продукты"
+    },
+    {
+      "name": "КРАХМАЛ КУКУРУЗНЫЙ",
+      "category": "ПРОЧИЕ ПРОДУКТЫ",
+      "supplier_name": "Метро",
+      "min_stock": null,
+      "unit": null,
+      "needs_supplier": false,
+      "source": "Продукты"
+    },
+    {
+      "name": "КРАХМАЛ картофельный",
+      "category": "ПРОЧИЕ ПРОДУКТЫ",
+      "supplier_name": "ЭлитТрейд",
+      "min_stock": null,
+      "unit": null,
+      "needs_supplier": false,
+      "source": "Продукты"
+    },
+    {
+      "name": "ДРОЖЖИ прессованные",
+      "category": "ПРОЧИЕ ПРОДУКТЫ",
+      "supplier_name": "Глобал Фуд",
+      "min_stock": 1.0,
+      "unit": null,
+      "needs_supplier": true,
+      "source": "Продукты"
+    },
+    {
+      "name": "ВОДОРОСЛИ НОРИ",
+      "category": "ПРОЧИЕ ПРОДУКТЫ",
+      "supplier_name": "ЭлитТрейд",
+      "min_stock": null,
+      "unit": null,
+      "needs_supplier": false,
+      "source": "Продукты"
+    },
+    {
+      "name": "ПОПКОРН СВЧ СОЛЬ",
+      "category": "ПРОЧИЕ ПРОДУКТЫ",
+      "supplier_name": "метро",
+      "min_stock": null,
+      "unit": null,
+      "needs_supplier": false,
+      "source": "Продукты"
+    },
+    {
+      "name": "СОЛЬ НИТРИТНАЯ",
+      "category": "ПРОЧИЕ ПРОДУКТЫ",
+      "supplier_name": "Озон",
+      "min_stock": 5.0,
+      "unit": null,
+      "needs_supplier": true,
+      "source": "Продукты"
+    },
+    {
+      "name": "КСАНТАН",
+      "category": "ПРОЧИЕ ПРОДУКТЫ",
+      "supplier_name": "Озон",
+      "min_stock": null,
+      "unit": null,
+      "needs_supplier": false,
+      "source": "Продукты"
+    },
+    {
+      "name": "КАПУСТА КВАШЕНАЯ",
+      "category": "ПРОЧИЕ ПРОДУКТЫ",
+      "supplier_name": "Заячий Погребок",
+      "min_stock": null,
+      "unit": null,
+      "needs_supplier": false,
+      "source": "Продукты"
+    },
+    {
+      "name": "ЛАВАШ",
+      "category": "МУКОМОЛЬНЫЕ ПРОДУКТЫ",
+      "supplier_name": "Через ХП",
+      "min_stock": null,
+      "unit": null,
+      "needs_supplier": false,
+      "source": "Продукты"
+    },
+    {
+      "name": "МУКА МАНИТОБА",
+      "category": "МУКОМОЛЬНЫЕ ПРОДУКТЫ",
+      "supplier_name": "ЭлитТрейд",
+      "min_stock": 70.0,
+      "unit": null,
+      "needs_supplier": false,
+      "source": "Продукты"
+    },
+    {
+      "name": "МУКА ПШЕНИЧНАЯ",
+      "category": "МУКОМОЛЬНЫЕ ПРОДУКТЫ",
+      "supplier_name": "Глобал Фуд",
+      "min_stock": 50.0,
+      "unit": null,
+      "needs_supplier": false,
+      "source": "Продукты"
+    },
+    {
+      "name": "МУКА РЖАНАЯ",
+      "category": "МУКОМОЛЬНЫЕ ПРОДУКТЫ",
+      "supplier_name": "Метро",
+      "min_stock": null,
+      "unit": null,
+      "needs_supplier": false,
+      "source": "Продукты"
+    },
+    {
+      "name": "МУКА ЦЕЛЬНОЗЕРНОВАЯ",
+      "category": "МУКОМОЛЬНЫЕ ПРОДУКТЫ",
+      "supplier_name": "Метро",
+      "min_stock": 5.0,
+      "unit": null,
+      "needs_supplier": false,
+      "source": "Продукты"
+    },
+    {
+      "name": "МУКА СЕМОЛИНА \"Крупка\"",
+      "category": "МУКОМОЛЬНЫЕ ПРОДУКТЫ",
+      "supplier_name": "Максимус/Метро",
+      "min_stock": null,
+      "unit": null,
+      "needs_supplier": true,
+      "source": "Продукты"
+    },
+    {
+      "name": "СОЛОД РЖАНОЙ ФЕРМЕНТ (ЧЕРНЫЙ)",
+      "category": "МУКОМОЛЬНЫЕ ПРОДУКТЫ",
+      "supplier_name": "Глобал Фуд",
+      "min_stock": null,
+      "unit": null,
+      "needs_supplier": false,
+      "source": "Продукты"
+    },
+    {
+      "name": "СОЛОД РЖАНОЙ НЕФЕРМЕНТ",
+      "category": "МУКОМОЛЬНЫЕ ПРОДУКТЫ",
+      "supplier_name": "OZON",
+      "min_stock": null,
+      "unit": null,
+      "needs_supplier": false,
+      "source": "Продукты"
+    },
+    {
+      "name": "МАСЛО рафинированное",
+      "category": "МАСЛО, МАЙОНЕЗ",
+      "supplier_name": "ЭлитТрейд",
+      "min_stock": null,
+      "unit": null,
+      "needs_supplier": false,
+      "source": "Продукты"
+    },
+    {
+      "name": "МАСЛО ОЛИВКОВОЕ",
+      "category": "МАСЛО, МАЙОНЕЗ",
+      "supplier_name": "ЭлитТрейд",
+      "min_stock": null,
+      "unit": null,
+      "needs_supplier": false,
+      "source": "Продукты"
+    },
+    {
+      "name": "МАЙОНЕЗ ЛУКА",
+      "category": "МАСЛО, МАЙОНЕЗ",
+      "supplier_name": "ЭлитТрейд",
+      "min_stock": null,
+      "unit": null,
+      "needs_supplier": false,
+      "source": "Продукты"
+    },
+    {
+      "name": "МАСЛО КУНЖУТНОЕ",
+      "category": "МАСЛО, МАЙОНЕЗ",
+      "supplier_name": "ЭлитТрейд",
+      "min_stock": null,
+      "unit": null,
+      "needs_supplier": false,
+      "source": "Продукты"
+    },
+    {
+      "name": "МАРГАРИН",
+      "category": "МАСЛО, МАЙОНЕЗ",
+      "supplier_name": "Глобал Фуд",
+      "min_stock": 3.0,
+      "unit": null,
+      "needs_supplier": false,
+      "source": "Продукты"
+    },
+    {
+      "name": "МАСЛО ФРИТЮРНОЕ",
+      "category": "МАСЛО, МАЙОНЕЗ",
+      "supplier_name": "ЭлитТрейд",
+      "min_stock": null,
+      "unit": null,
+      "needs_supplier": false,
+      "source": "Продукты"
+    },
+    {
+      "name": "МАСЛО нерафинированное",
+      "category": "МАСЛО, МАЙОНЕЗ",
+      "supplier_name": "Метро",
+      "min_stock": null,
+      "unit": null,
+      "needs_supplier": false,
+      "source": "Продукты"
+    },
+    {
+      "name": "МАСЛО ТРЮФЕЛЬНОЕ",
+      "category": "МАСЛО, МАЙОНЕЗ",
+      "supplier_name": "Метро",
+      "min_stock": null,
+      "unit": null,
+      "needs_supplier": false,
+      "source": "Продукты"
+    },
+    {
+      "name": "ТЕСТО КАТАИФИ",
+      "category": "МАСЛО, МАЙОНЕЗ",
+      "supplier_name": "Метро",
+      "min_stock": null,
+      "unit": null,
+      "needs_supplier": false,
+      "source": "Продукты"
+    },
+    {
+      "name": "ГОРОШЕК КОНСЕРВ",
+      "category": "КОНСЕРВАЦИЯ",
+      "supplier_name": "ЭлитТрейд",
+      "min_stock": null,
+      "unit": null,
+      "needs_supplier": false,
+      "source": "Продукты"
+    },
+    {
+      "name": "КАПЕРСЫ консервированные",
+      "category": "КОНСЕРВАЦИЯ",
+      "supplier_name": "ЭлитТрейд",
+      "min_stock": null,
+      "unit": null,
+      "needs_supplier": false,
+      "source": "Продукты"
+    },
+    {
+      "name": "КАПЕРСЫ крупные на веточке",
+      "category": "КОНСЕРВАЦИЯ",
+      "supplier_name": "ЭлитТрейд",
+      "min_stock": null,
+      "unit": null,
+      "needs_supplier": false,
+      "source": "Продукты"
+    },
+    {
+      "name": "КОРНИШОНЫ МИНИ КОНСЕРВИРОВАННЫЕ",
+      "category": "КОНСЕРВАЦИЯ",
+      "supplier_name": "Метро",
+      "min_stock": null,
+      "unit": null,
+      "needs_supplier": false,
+      "source": "Продукты"
+    },
+    {
+      "name": "МАСЛИНЫ целые б/к черные",
+      "category": "КОНСЕРВАЦИЯ",
+      "supplier_name": "ЭлитТрейд",
+      "min_stock": null,
+      "unit": null,
+      "needs_supplier": false,
+      "source": "Продукты"
+    },
+    {
+      "name": "ОЛИВКИ ЗЕЛЕНЫЕ конс.",
+      "category": "КОНСЕРВАЦИЯ",
+      "supplier_name": "Метро",
+      "min_stock": null,
+      "unit": null,
+      "needs_supplier": false,
+      "source": "Продукты"
+    },
+    {
+      "name": "ПАТИССОНЫ КОНС",
+      "category": "КОНСЕРВАЦИЯ",
+      "supplier_name": "Метро/Ярошенко",
+      "min_stock": null,
+      "unit": null,
+      "needs_supplier": true,
+      "source": "Продукты"
+    },
+    {
+      "name": "ПЕРЕЦ ХАЛАПЕНЬЮ ЗЕЛЕН РЕЗАН, КОНСЕРВ.",
+      "category": "КОНСЕРВАЦИЯ",
+      "supplier_name": "ЭлитТрейд",
+      "min_stock": null,
+      "unit": null,
+      "needs_supplier": false,
+      "source": "Продукты"
+    },
+    {
+      "name": "ПЕРЕЦ ХАЛАПЕНЬЮ КРАСНЫЙ РЕЗАН, КОНСЕРВ.",
+      "category": "КОНСЕРВАЦИЯ",
+      "supplier_name": "Метро",
+      "min_stock": null,
+      "unit": null,
+      "needs_supplier": false,
+      "source": "Продукты"
+    },
+    {
+      "name": "ТОМАТЫ ВЯЛЕНЫЕ",
+      "category": "КОНСЕРВАЦИЯ",
+      "supplier_name": "ЭлитТрейд",
+      "min_stock": null,
+      "unit": null,
+      "needs_supplier": false,
+      "source": "Продукты"
+    },
+    {
+      "name": "ТОМАТЫ КУБИК",
+      "category": "КОНСЕРВАЦИЯ",
+      "supplier_name": "ЭлитТрейд",
+      "min_stock": null,
+      "unit": null,
+      "needs_supplier": false,
+      "source": "Продукты"
+    },
+    {
+      "name": "ХРЕН КОНСЕРВИРОВАННЫЙ",
+      "category": "КОНСЕРВАЦИЯ",
+      "supplier_name": "Метро",
+      "min_stock": null,
+      "unit": null,
+      "needs_supplier": false,
+      "source": "Продукты"
+    },
+    {
+      "name": "ТУНЕЦ Консервированный",
+      "category": "КОНСЕРВАЦИЯ",
+      "supplier_name": "Метро",
+      "min_stock": null,
+      "unit": null,
+      "needs_supplier": false,
+      "source": "Продукты"
+    },
+    {
+      "name": "СУХАРИ ПАНКО",
+      "category": "ПРИПРАВА",
+      "supplier_name": "Элит Трейд",
+      "min_stock": null,
+      "unit": null,
+      "needs_supplier": false,
+      "source": "Продукты"
+    },
+    {
+      "name": "ПАНИРОВОЧНАЯ СМЕСЬ хруст. Гурмикс",
+      "category": "ПРИПРАВА",
+      "supplier_name": "ЭлитТрейд",
+      "min_stock": null,
+      "unit": null,
+      "needs_supplier": false,
+      "source": "Продукты"
+    },
+    {
+      "name": "ПРИПРАВА ПЕРЕЦ ЧЕРНЫЙ ГОРОШКОМ",
+      "category": "ПРИПРАВА",
+      "supplier_name": "Метро",
+      "min_stock": null,
+      "unit": null,
+      "needs_supplier": false,
+      "source": "Продукты"
+    },
+    {
+      "name": "ПРИПРАВА ЧЕСНОК ГРАНУЛИРОВАННЫЙ",
+      "category": "ПРИПРАВА",
+      "supplier_name": "Метро",
+      "min_stock": null,
+      "unit": null,
+      "needs_supplier": false,
+      "source": "Продукты"
+    },
+    {
+      "name": "ПРИПРАВА МОЖЖЕВЕЛОВЫЕ ЯГОДЫ",
+      "category": "ПРИПРАВА",
+      "supplier_name": "Метро",
+      "min_stock": null,
+      "unit": null,
+      "needs_supplier": false,
+      "source": "Продукты"
+    },
+    {
+      "name": "ПРИПРАВА СУМАХ",
+      "category": "ПРИПРАВА",
+      "supplier_name": "новосибирск",
+      "min_stock": 2.0,
+      "unit": null,
+      "needs_supplier": true,
+      "source": "Продукты"
+    },
+    {
+      "name": "ПРИПРАВА КОРИЦА строганная",
+      "category": "ПРИПРАВА",
+      "supplier_name": "Глобал Фуд",
+      "min_stock": 2.0,
+      "unit": null,
+      "needs_supplier": false,
+      "source": "Продукты"
+    },
+    {
+      "name": "ПРИПРАВА ПЕРЕЦ ЧЕРНЫЙ молотый",
+      "category": "ПРИПРАВА",
+      "supplier_name": "Метро",
+      "min_stock": null,
+      "unit": null,
+      "needs_supplier": false,
+      "source": "Продукты"
+    },
+    {
+      "name": "ПРИПРАВА КОРИАНДР в зернах",
+      "category": "ПРИПРАВА",
+      "supplier_name": "Глобал Фуд",
+      "min_stock": null,
+      "unit": null,
+      "needs_supplier": false,
+      "source": "Продукты"
+    },
+    {
+      "name": "ПРИПРАВА КОРИАНДР молотый",
+      "category": "ПРИПРАВА",
+      "supplier_name": "Глобал Фуд",
+      "min_stock": null,
+      "unit": null,
+      "needs_supplier": false,
+      "source": "Продукты"
+    },
+    {
+      "name": "ПРИПРАВА ТМИН",
+      "category": "ПРИПРАВА",
+      "supplier_name": "Метро",
+      "min_stock": null,
+      "unit": null,
+      "needs_supplier": false,
+      "source": "Продукты"
+    },
+    {
+      "name": "ПРИПРАВА АНИС звездочки (БАДЬЯН)",
+      "category": "ПРИПРАВА",
+      "supplier_name": "Глобал Фуд",
+      "min_stock": null,
+      "unit": null,
+      "needs_supplier": false,
+      "source": "Продукты"
+    },
+    {
+      "name": "ПРИПРАВА ФЕНХЕЛЬ в зернах",
+      "category": "ПРИПРАВА",
+      "supplier_name": "Метро",
+      "min_stock": null,
+      "unit": null,
+      "needs_supplier": false,
+      "source": "Продукты"
+    },
+    {
+      "name": "ПРИПРАВА ДАШИДА",
+      "category": "ПРИПРАВА",
+      "supplier_name": "Женя",
+      "min_stock": 1.0,
+      "unit": null,
+      "needs_supplier": false,
+      "source": "Продукты"
+    },
+    {
+      "name": "ПРИПРАВА ПАПРИКА",
+      "category": "ПРИПРАВА",
+      "supplier_name": "Метро",
+      "min_stock": 2.0,
+      "unit": null,
+      "needs_supplier": false,
+      "source": "Продукты"
+    },
+    {
+      "name": "ПРИПРАВА КУРКУМА ЕК",
+      "category": "ПРИПРАВА",
+      "supplier_name": "Метро",
+      "min_stock": 1.0,
+      "unit": null,
+      "needs_supplier": false,
+      "source": "Продукты"
+    },
+    {
+      "name": "ПРИПРАВА ЛАВРОВЫЙ ЛИСТ",
+      "category": "ПРИПРАВА",
+      "supplier_name": "глобал Фуд",
+      "min_stock": 100.0,
+      "unit": null,
+      "needs_supplier": false,
+      "source": "Продукты"
+    },
+    {
+      "name": "ПРИПРАВА ОРЕГАНО",
+      "category": "ПРИПРАВА",
+      "supplier_name": "Метро",
+      "min_stock": null,
+      "unit": null,
+      "needs_supplier": false,
+      "source": "Продукты"
+    },
+    {
+      "name": "ПРИПРАВА ПАПРИКА КОПЧЕНАЯ",
+      "category": "ПРИПРАВА",
+      "supplier_name": "Метро",
+      "min_stock": null,
+      "unit": null,
+      "needs_supplier": false,
+      "source": "Продукты"
+    },
+    {
+      "name": "ПРИПРАВА КУНЖУТ БЕЛЫЙ",
+      "category": "ПРИПРАВА",
+      "supplier_name": "метро",
+      "min_stock": 1.0,
+      "unit": null,
+      "needs_supplier": false,
+      "source": "Продукты"
+    },
+    {
+      "name": "ПРИПРАВА ЛАО",
+      "category": "ПРИПРАВА",
+      "supplier_name": "Женя",
+      "min_stock": null,
+      "unit": null,
+      "needs_supplier": false,
+      "source": "Продукты"
+    },
+    {
+      "name": "CПЕЦИИ БРИСКЕТ",
+      "category": "ПРИПРАВА",
+      "supplier_name": "новосибирск",
+      "min_stock": null,
+      "unit": null,
+      "needs_supplier": false,
+      "source": "Продукты"
+    },
+    {
+      "name": "ВАСАБИ",
+      "category": "ПРИПРАВА",
+      "supplier_name": "ЭлитТрейд",
+      "min_stock": 1.0,
+      "unit": null,
+      "needs_supplier": false,
+      "source": "Продукты"
+    },
+    {
+      "name": "СУХОЙ ДЕМИГЛАС",
+      "category": "ПРИПРАВА",
+      "supplier_name": "Озон",
+      "min_stock": 1.0,
+      "unit": null,
+      "needs_supplier": false,
+      "source": "Продукты"
+    },
+    {
+      "name": "СОЛЬ НИТРИТНАЯ",
+      "category": "ПРИПРАВА",
+      "supplier_name": "Озон",
+      "min_stock": null,
+      "unit": null,
+      "needs_supplier": false,
+      "source": "Продукты"
+    },
+    {
+      "name": "СОЛЬ МОРСКАЯ",
+      "category": "ПРИПРАВА",
+      "supplier_name": "Глобал Фуд",
+      "min_stock": null,
+      "unit": null,
+      "needs_supplier": false,
+      "source": "Продукты"
+    },
+    {
+      "name": "СОЛЬ КРУПНЫЙ ПОМОЛ",
+      "category": "ПРИПРАВА",
+      "supplier_name": "Глобал Фуд",
+      "min_stock": null,
+      "unit": null,
+      "needs_supplier": false,
+      "source": "Продукты"
+    },
+    {
+      "name": "ПЕРЕЦ ЧИЛИ ХЛОПЬЯ",
+      "category": "ПРИПРАВА",
+      "supplier_name": "Женя",
+      "min_stock": null,
+      "unit": null,
+      "needs_supplier": false,
+      "source": "Продукты"
+    },
+    {
+      "name": "ФИСТАШКА дробленая 200 гр",
+      "category": "КОНДИТЕРСКОЕ СЫРЬЕ",
+      "supplier_name": "Озон",
+      "min_stock": null,
+      "unit": null,
+      "needs_supplier": false,
+      "source": "Продукты"
+    },
+    {
+      "name": "МУКА ЧЕРЕМУХИ",
+      "category": "КОНДИТЕРСКОЕ СЫРЬЕ",
+      "supplier_name": "Глобал Фуд",
+      "min_stock": null,
+      "unit": null,
+      "needs_supplier": false,
+      "source": "Продукты"
+    },
+    {
+      "name": "ШОКОЛАД БРИКЕТ чёрный",
+      "category": "КОНДИТЕРСКОЕ СЫРЬЕ",
+      "supplier_name": "ЭлитТрейд",
+      "min_stock": 5.0,
+      "unit": null,
+      "needs_supplier": false,
+      "source": "Продукты"
+    },
+    {
+      "name": "САХАРНАЯ ПУДРА",
+      "category": "КОНДИТЕРСКОЕ СЫРЬЕ",
+      "supplier_name": "Метро",
+      "min_stock": 5.0,
+      "unit": null,
+      "needs_supplier": false,
+      "source": "Продукты"
+    },
+    {
+      "name": "МЕД ЦВЕТОЧНЫЙ",
+      "category": "КОНДИТЕРСКОЕ СЫРЬЕ",
+      "supplier_name": "ЭлитТрейд",
+      "min_stock": 2.0,
+      "unit": null,
+      "needs_supplier": false,
+      "source": "Продукты"
+    },
+    {
+      "name": "САХАР ТРОСТНИКОВЫЙ",
+      "category": "КОНДИТЕРСКОЕ СЫРЬЕ",
+      "supplier_name": "Метро",
+      "min_stock": 10.0,
+      "unit": null,
+      "needs_supplier": false,
+      "source": "Продукты"
+    },
+    {
+      "name": "САХАР",
+      "category": "КОНДИТЕРСКОЕ СЫРЬЕ",
+      "supplier_name": "Глобал Фуд",
+      "min_stock": null,
+      "unit": null,
+      "needs_supplier": false,
+      "source": "Продукты"
+    },
+    {
+      "name": "РАЗРЫХЛИТЕЛЬ",
+      "category": "КОНДИТЕРСКОЕ СЫРЬЕ",
+      "supplier_name": "Метро",
+      "min_stock": null,
+      "unit": null,
+      "needs_supplier": false,
+      "source": "Продукты"
+    },
+    {
+      "name": "ВАНИЛЬНЫЙ САХАР",
+      "category": "КОНДИТЕРСКОЕ СЫРЬЕ",
+      "supplier_name": "Метро",
+      "min_stock": null,
+      "unit": null,
+      "needs_supplier": false,
+      "source": "Продукты"
+    },
+    {
+      "name": "КАКАО порошок",
+      "category": "КОНДИТЕРСКОЕ СЫРЬЕ",
+      "supplier_name": "Элит Трейд",
+      "min_stock": null,
+      "unit": null,
+      "needs_supplier": false,
+      "source": "Продукты"
+    },
+    {
+      "name": "ЖЕЛАТИН листовой",
+      "category": "КОНДИТЕРСКОЕ СЫРЬЕ",
+      "supplier_name": "Метро",
+      "min_stock": null,
+      "unit": null,
+      "needs_supplier": false,
+      "source": "Продукты"
+    },
+    {
+      "name": "ГРЕЦКИЙ ОРЕХ",
+      "category": "ОРЕХИ",
+      "supplier_name": "Женя",
+      "min_stock": null,
+      "unit": null,
+      "needs_supplier": false,
+      "source": "Продукты"
+    },
+    {
+      "name": "ФУНДУК",
+      "category": "ОРЕХИ",
+      "supplier_name": "Женя",
+      "min_stock": null,
+      "unit": null,
+      "needs_supplier": false,
+      "source": "Продукты"
+    },
+    {
+      "name": "КЕДРОВЫЙ ОРЕХ",
+      "category": "ОРЕХИ",
+      "supplier_name": "Женя",
+      "min_stock": null,
+      "unit": null,
+      "needs_supplier": false,
+      "source": "Продукты"
+    },
+    {
+      "name": "ГЕРКУЛЕС",
+      "category": "КРУПЫ",
+      "supplier_name": "Метро",
+      "min_stock": null,
+      "unit": null,
+      "needs_supplier": false,
+      "source": "Продукты"
+    },
+    {
+      "name": "ГРЕЧКА",
+      "category": "КРУПЫ",
+      "supplier_name": "Метро",
+      "min_stock": 5.0,
+      "unit": null,
+      "needs_supplier": false,
+      "source": "Продукты"
+    },
+    {
+      "name": "КИНОА",
+      "category": "КРУПЫ",
+      "supplier_name": "Метро",
+      "min_stock": null,
+      "unit": null,
+      "needs_supplier": false,
+      "source": "Продукты"
+    },
+    {
+      "name": "ЛАПША ЯИЧНАЯ для рамена",
+      "category": "КРУПЫ",
+      "supplier_name": "Элит Трейд",
+      "min_stock": null,
+      "unit": null,
+      "needs_supplier": false,
+      "source": "Продукты"
+    },
+    {
+      "name": "ГОРОХ КРУПА",
+      "category": "КРУПЫ",
+      "supplier_name": "Метро",
+      "min_stock": null,
+      "unit": null,
+      "needs_supplier": false,
+      "source": "Продукты"
+    },
+    {
+      "name": "ПАСТА РИЗО",
+      "category": "КРУПЫ",
+      "supplier_name": "Метро",
+      "min_stock": null,
+      "unit": null,
+      "needs_supplier": false,
+      "source": "Продукты"
+    },
+    {
+      "name": "ПАСТА СПАГЕТТИ №13 БАВЕТТЕ",
+      "category": "КРУПЫ",
+      "supplier_name": "Метро",
+      "min_stock": null,
+      "unit": null,
+      "needs_supplier": false,
+      "source": "Продукты"
+    },
+    {
+      "name": "ПЕРЛОВКА",
+      "category": "КРУПЫ",
+      "supplier_name": "Метро",
+      "min_stock": 5.0,
+      "unit": null,
+      "needs_supplier": false,
+      "source": "Продукты"
+    },
+    {
+      "name": "ПАСТА КАЗАРЕЧЧЕ",
+      "category": "КРУПЫ",
+      "supplier_name": "Метро",
+      "min_stock": null,
+      "unit": null,
+      "needs_supplier": false,
+      "source": "Продукты"
+    },
+    {
+      "name": "ПАСТА ПЕППЕ",
+      "category": "КРУПЫ",
+      "supplier_name": "Метро",
+      "min_stock": null,
+      "unit": null,
+      "needs_supplier": false,
+      "source": "Продукты"
+    },
+    {
+      "name": "РИС КРУГЛЫЙ",
+      "category": "КРУПЫ",
+      "supplier_name": "ЭлитТрейд",
+      "min_stock": null,
+      "unit": null,
+      "needs_supplier": false,
+      "source": "Продукты"
+    },
+    {
+      "name": "РИС ЧЕРНЫЙ экстра",
+      "category": "КРУПЫ",
+      "supplier_name": "Женя",
+      "min_stock": null,
+      "unit": null,
+      "needs_supplier": false,
+      "source": "Продукты"
+    },
+    {
+      "name": "БАЛОНЧИК ДЛЯ СИФОНА (Soda)",
+      "category": "КОМПОТ СМЕСЬ",
+      "supplier_name": "Озон",
+      "min_stock": null,
+      "unit": null,
+      "needs_supplier": false,
+      "source": "Продукты"
+    },
+    {
+      "name": "БАЛОН ГАЗОВЫЙ",
+      "category": "КОМПОТ СМЕСЬ",
+      "supplier_name": "Чип и дип",
+      "min_stock": null,
+      "unit": null,
+      "needs_supplier": false,
+      "source": "Продукты"
+    },
+    {
+      "name": "МОЛОЧНЫЙ БАТОН",
+      "category": "Маленький",
+      "supplier_name": "Метро",
+      "min_stock": null,
+      "unit": null,
+      "needs_supplier": false,
+      "source": "Продукты"
+    },
+    {
+      "name": "КВАС",
+      "category": "Маленький",
+      "supplier_name": "Самокат/Лента/Командор",
+      "min_stock": null,
+      "unit": null,
+      "needs_supplier": true,
+      "source": "Продукты"
+    },
+    {
+      "name": "АЙРАН",
+      "category": "Маленький",
+      "supplier_name": "Самокат/Метро",
+      "min_stock": null,
+      "unit": null,
+      "needs_supplier": true,
+      "source": "Продукты"
+    },
+    {
+      "name": "СОУС КУНЖУТНЫЙ",
+      "category": "ВРЕМЕННЫЕ ПОЗИЦИИ",
+      "supplier_name": "Метро",
+      "min_stock": null,
+      "unit": null,
+      "needs_supplier": false,
+      "source": "Продукты"
+    },
+    {
+      "name": "Сыр плавленный чеддер",
+      "category": "ВРЕМЕННЫЕ ПОЗИЦИИ",
+      "supplier_name": "ЭлитТрейд",
+      "min_stock": null,
+      "unit": null,
+      "needs_supplier": false,
+      "source": "Продукты"
+    },
+    {
+      "name": "СЫР соус ЧЕДДЕР",
+      "category": "ВРЕМЕННЫЕ ПОЗИЦИИ",
+      "supplier_name": "ЭлитТрейд",
+      "min_stock": null,
+      "unit": null,
+      "needs_supplier": false,
+      "source": "Продукты"
+    },
+    {
+      "name": "Ребра свиные деликатесные",
+      "category": "ВРЕМЕННЫЕ ПОЗИЦИИ",
+      "supplier_name": "Мираторг",
+      "min_stock": null,
+      "unit": null,
+      "needs_supplier": false,
+      "source": "Продукты"
+    },
+    {
+      "name": "СРИПЛОЙН МАТЮРА",
+      "category": "МЯСНЫЕ ПРОДУКТЫ",
+      "supplier_name": null,
+      "min_stock": 20.0,
+      "unit": null,
+      "needs_supplier": true,
+      "source": "Без поставщика"
+    },
+    {
+      "name": "КУРИЦА ЦЫПЛЕНОК бройлер",
+      "category": "МЯСНЫЕ ПРОДУКТЫ",
+      "supplier_name": null,
+      "min_stock": null,
+      "unit": null,
+      "needs_supplier": true,
+      "source": "Без поставщика"
+    },
+    {
+      "name": "АВОКАДО свежее",
+      "category": "ФРУКТЫ, ОВОЩИ, ОРЕХИ",
+      "supplier_name": null,
+      "min_stock": 5.0,
+      "unit": null,
+      "needs_supplier": true,
+      "source": "Без поставщика"
+    },
+    {
+      "name": "АПЕЛЬСИН свежий",
+      "category": "ФРУКТЫ, ОВОЩИ, ОРЕХИ",
+      "supplier_name": null,
+      "min_stock": 10.0,
+      "unit": null,
+      "needs_supplier": true,
+      "source": "Без поставщика"
+    },
+    {
+      "name": "БАЗИЛИК свежий зеленый",
+      "category": "ФРУКТЫ, ОВОЩИ, ОРЕХИ",
+      "supplier_name": null,
+      "min_stock": 1.0,
+      "unit": null,
+      "needs_supplier": true,
+      "source": "Без поставщика"
+    },
+    {
+      "name": "БАКЛАЖАН свежий",
+      "category": "ФРУКТЫ, ОВОЩИ, ОРЕХИ",
+      "supplier_name": null,
+      "min_stock": null,
+      "unit": null,
+      "needs_supplier": true,
+      "source": "Без поставщика"
+    },
+    {
+      "name": "БРУСНИКА С/М",
+      "category": "ФРУКТЫ, ОВОЩИ, ОРЕХИ",
+      "supplier_name": null,
+      "min_stock": 10.0,
+      "unit": null,
+      "needs_supplier": true,
+      "source": "Без поставщика"
+    },
+    {
+      "name": "ВИШНЯ С/М",
+      "category": "ФРУКТЫ, ОВОЩИ, ОРЕХИ",
+      "supplier_name": null,
+      "min_stock": 5.0,
+      "unit": null,
+      "needs_supplier": true,
+      "source": "Без поставщика"
+    },
+    {
+      "name": "ГРЕЙПФРУТ свежий",
+      "category": "ФРУКТЫ, ОВОЩИ, ОРЕХИ",
+      "supplier_name": null,
+      "min_stock": 2.0,
+      "unit": null,
+      "needs_supplier": true,
+      "source": "Без поставщика"
+    },
+    {
+      "name": "ГРИБЫ БЕЛЫЕ СУХИЕ",
+      "category": "ФРУКТЫ, ОВОЩИ, ОРЕХИ",
+      "supplier_name": null,
+      "min_stock": null,
+      "unit": null,
+      "needs_supplier": true,
+      "source": "Без поставщика"
+    },
+    {
+      "name": "ГРИБЫ БЕЛЫЕ СУХИЕ молотые",
+      "category": "ФРУКТЫ, ОВОЩИ, ОРЕХИ",
+      "supplier_name": null,
+      "min_stock": null,
+      "unit": null,
+      "needs_supplier": true,
+      "source": "Без поставщика"
+    },
+    {
+      "name": "ГРИБЫ ВЕШЕНКА свежие",
+      "category": "ФРУКТЫ, ОВОЩИ, ОРЕХИ",
+      "supplier_name": null,
+      "min_stock": 4.0,
+      "unit": null,
+      "needs_supplier": true,
+      "source": "Без поставщика"
+    },
+    {
+      "name": "ГРИБЫ ОПЯТА С/М",
+      "category": "ФРУКТЫ, ОВОЩИ, ОРЕХИ",
+      "supplier_name": null,
+      "min_stock": 3.0,
+      "unit": null,
+      "needs_supplier": true,
+      "source": "Без поставщика"
+    },
+    {
+      "name": "ГРИБЫ ШАМПИНЬОНЫ свежие",
+      "category": "ГРИБЫ СМОРЧКИ С/М",
+      "supplier_name": null,
+      "min_stock": 3.0,
+      "unit": null,
+      "needs_supplier": true,
+      "source": "Без поставщика"
+    },
+    {
+      "name": "ГРИБЫ ШИИТАКЕ сухие",
+      "category": "ГРИБЫ СМОРЧКИ С/М",
+      "supplier_name": null,
+      "min_stock": 1.0,
+      "unit": null,
+      "needs_supplier": true,
+      "source": "Без поставщика"
+    },
+    {
+      "name": "ГРУША свежая Конференция",
+      "category": "ГРИБЫ СМОРЧКИ С/М",
+      "supplier_name": null,
+      "min_stock": 3.0,
+      "unit": null,
+      "needs_supplier": true,
+      "source": "Без поставщика"
+    },
+    {
+      "name": "ДАЙКОН свежий",
+      "category": "ГРИБЫ СМОРЧКИ С/М",
+      "supplier_name": null,
+      "min_stock": 4.0,
+      "unit": null,
+      "needs_supplier": true,
+      "source": "Без поставщика"
+    },
+    {
+      "name": "ИЗЮМ",
+      "category": "ГРИБЫ СМОРЧКИ С/М",
+      "supplier_name": null,
+      "min_stock": null,
+      "unit": null,
+      "needs_supplier": true,
+      "source": "Без поставщика"
+    },
+    {
+      "name": "ИМБИРЬ корень свежий",
+      "category": "ГРИБЫ СМОРЧКИ С/М",
+      "supplier_name": null,
+      "min_stock": 1.0,
+      "unit": null,
+      "needs_supplier": true,
+      "source": "Без поставщика"
+    },
+    {
+      "name": "ИНЖИР вяленый",
+      "category": "ГРИБЫ СМОРЧКИ С/М",
+      "supplier_name": null,
+      "min_stock": null,
+      "unit": null,
+      "needs_supplier": true,
+      "source": "Без поставщика"
+    },
+    {
+      "name": "КАБАЧОК МОЛОДОЙ",
+      "category": "ГРИБЫ СМОРЧКИ С/М",
+      "supplier_name": null,
+      "min_stock": 3.0,
+      "unit": null,
+      "needs_supplier": true,
+      "source": "Без поставщика"
+    },
+    {
+      "name": "КАБАЧОК ЦУКИНИ",
+      "category": "ГРИБЫ СМОРЧКИ С/М",
+      "supplier_name": null,
+      "min_stock": 3.0,
+      "unit": null,
+      "needs_supplier": true,
+      "source": "Без поставщика"
+    },
+    {
+      "name": "КАПУСТА БРОККОЛИ С/М",
+      "category": "ГРИБЫ СМОРЧКИ С/М",
+      "supplier_name": null,
+      "min_stock": 5.0,
+      "unit": null,
+      "needs_supplier": true,
+      "source": "Без поставщика"
+    },
+    {
+      "name": "КАПУСТА свежая БЕЛОКАЧАННАЯ",
+      "category": "ГРИБЫ СМОРЧКИ С/М",
+      "supplier_name": null,
+      "min_stock": 15.0,
+      "unit": null,
+      "needs_supplier": true,
+      "source": "Без поставщика"
+    },
+    {
+      "name": "КАПУСТА свежая КРАСНОКОЧАННАЯ",
+      "category": "ГРИБЫ СМОРЧКИ С/М",
+      "supplier_name": null,
+      "min_stock": null,
+      "unit": null,
+      "needs_supplier": true,
+      "source": "Без поставщика"
+    },
+    {
+      "name": "КАПУСТА свежая ПЕКИНСКАЯ",
+      "category": "ГРИБЫ СМОРЧКИ С/М",
+      "supplier_name": null,
+      "min_stock": 7.0,
+      "unit": null,
+      "needs_supplier": true,
+      "source": "Без поставщика"
+    },
+    {
+      "name": "КАПУСТА соленая С ХРЕНОМ",
+      "category": "ГРИБЫ СМОРЧКИ С/М",
+      "supplier_name": null,
+      "min_stock": 10.0,
+      "unit": null,
+      "needs_supplier": true,
+      "source": "Без поставщика"
+    },
+    {
+      "name": "КАРТОФЕЛЬ БЕБИ МЫТЫЙ (диаметр 4-6 см)",
+      "category": "ГРИБЫ СМОРЧКИ С/М",
+      "supplier_name": null,
+      "min_stock": 15.0,
+      "unit": null,
+      "needs_supplier": true,
+      "source": "Без поставщика"
+    },
+    {
+      "name": "КАРТОФЕЛЬ для запекания Желтый немытый",
+      "category": "ГРИБЫ СМОРЧКИ С/М",
+      "supplier_name": null,
+      "min_stock": 50.0,
+      "unit": null,
+      "needs_supplier": true,
+      "source": "Без поставщика"
+    },
+    {
+      "name": "КАРТОФЕЛЬ желтый",
+      "category": "ГРИБЫ СМОРЧКИ С/М",
+      "supplier_name": null,
+      "min_stock": null,
+      "unit": null,
+      "needs_supplier": true,
+      "source": "Без поставщика"
+    },
+    {
+      "name": "КАРТОФЕЛЬ молодой",
+      "category": "ГРИБЫ СМОРЧКИ С/М",
+      "supplier_name": null,
+      "min_stock": null,
+      "unit": null,
+      "needs_supplier": true,
+      "source": "Без поставщика"
+    },
+    {
+      "name": "КИВИ свежий",
+      "category": "ГРИБЫ СМОРЧКИ С/М",
+      "supplier_name": null,
+      "min_stock": null,
+      "unit": null,
+      "needs_supplier": true,
+      "source": "Без поставщика"
+    },
+    {
+      "name": "КИНЗА свежая зелень",
+      "category": "ГРИБЫ СМОРЧКИ С/М",
+      "supplier_name": null,
+      "min_stock": 1.0,
+      "unit": null,
+      "needs_supplier": true,
+      "source": "Без поставщика"
+    },
+    {
+      "name": "КЛУБНИКА СВЕЖАЯ",
+      "category": "ГРИБЫ СМОРЧКИ С/М",
+      "supplier_name": null,
+      "min_stock": null,
+      "unit": null,
+      "needs_supplier": true,
+      "source": "Без поставщика"
+    },
+    {
+      "name": "КЛЮКВА С/М",
+      "category": "ГРИБЫ СМОРЧКИ С/М",
+      "supplier_name": null,
+      "min_stock": 10.0,
+      "unit": null,
+      "needs_supplier": true,
+      "source": "Без поставщика"
+    },
+    {
+      "name": "КОРЕНЬ ГАЛАНГО",
+      "category": "ГРИБЫ СМОРЧКИ С/М",
+      "supplier_name": null,
+      "min_stock": 4.0,
+      "unit": null,
+      "needs_supplier": true,
+      "source": "Без поставщика"
+    },
+    {
+      "name": "КУКУРУЗА В ПОЧАТКАХ свежая",
+      "category": "ГРИБЫ СМОРЧКИ С/М",
+      "supplier_name": null,
+      "min_stock": 5.0,
+      "unit": null,
+      "needs_supplier": true,
+      "source": "Без поставщика"
+    },
+    {
+      "name": "КУКУРУЗА ЗЕРНО С/М",
+      "category": "ГРИБЫ СМОРЧКИ С/М",
+      "supplier_name": null,
+      "min_stock": null,
+      "unit": null,
+      "needs_supplier": true,
+      "source": "Без поставщика"
+    },
+    {
+      "name": "ЛАЙМ свежий",
+      "category": "ГРИБЫ СМОРЧКИ С/М",
+      "supplier_name": null,
+      "min_stock": 2.0,
+      "unit": null,
+      "needs_supplier": true,
+      "source": "Без поставщика"
+    },
+    {
+      "name": "ЛЕМОНГРАСС",
+      "category": "ГРИБЫ СМОРЧКИ С/М",
+      "supplier_name": null,
+      "min_stock": 2.0,
+      "unit": null,
+      "needs_supplier": true,
+      "source": "Без поставщика"
+    },
+    {
+      "name": "ЛИМОН свежий",
+      "category": "ГРИБЫ СМОРЧКИ С/М",
+      "supplier_name": null,
+      "min_stock": 3.0,
+      "unit": null,
+      "needs_supplier": true,
+      "source": "Без поставщика"
+    },
+    {
+      "name": "ЛИСТЬЯ ЛАЙМ свежие",
+      "category": "ГРИБЫ СМОРЧКИ С/М",
+      "supplier_name": null,
+      "min_stock": 2.0,
+      "unit": null,
+      "needs_supplier": true,
+      "source": "Без поставщика"
+    },
+    {
+      "name": "ЛУК ЗЕЛЕНЫЙ",
+      "category": "ГРИБЫ СМОРЧКИ С/М",
+      "supplier_name": null,
+      "min_stock": 0.5,
+      "unit": null,
+      "needs_supplier": true,
+      "source": "Без поставщика"
+    },
+    {
+      "name": "ЛУК КРАСНЫЙ свежий",
+      "category": "ГРИБЫ СМОРЧКИ С/М",
+      "supplier_name": null,
+      "min_stock": 2.0,
+      "unit": null,
+      "needs_supplier": true,
+      "source": "Без поставщика"
+    },
+    {
+      "name": "ЛУК ПОРЕЙ свежий",
+      "category": "ГРИБЫ СМОРЧКИ С/М",
+      "supplier_name": null,
+      "min_stock": 1.5,
+      "unit": null,
+      "needs_supplier": true,
+      "source": "Без поставщика"
+    },
+    {
+      "name": "ЛУК РЕПЧАТЫЙ свежий",
+      "category": "ГРИБЫ СМОРЧКИ С/М",
+      "supplier_name": null,
+      "min_stock": 20.0,
+      "unit": null,
+      "needs_supplier": true,
+      "source": "Без поставщика"
+    },
+    {
+      "name": "МАЛИНА С/М",
+      "category": "ГРИБЫ СМОРЧКИ С/М",
+      "supplier_name": null,
+      "min_stock": null,
+      "unit": null,
+      "needs_supplier": true,
+      "source": "Без поставщика"
+    },
+    {
+      "name": "МОРКОВЬ свежая",
+      "category": "ГРИБЫ СМОРЧКИ С/М",
+      "supplier_name": null,
+      "min_stock": 15.0,
+      "unit": null,
+      "needs_supplier": true,
+      "source": "Без поставщика"
+    },
+    {
+      "name": "МЯТА свежая зелень",
+      "category": "ГРИБЫ СМОРЧКИ С/М",
+      "supplier_name": null,
+      "min_stock": 0.2,
+      "unit": null,
+      "needs_supplier": true,
+      "source": "Без поставщика"
+    },
+    {
+      "name": "ОБЛЕПИХА С/М",
+      "category": "ГРИБЫ СМОРЧКИ С/М",
+      "supplier_name": null,
+      "min_stock": 10.0,
+      "unit": null,
+      "needs_supplier": true,
+      "source": "Без поставщика"
+    },
+    {
+      "name": "ОГУРЦЫ свежие короткоплодные",
+      "category": "ГРИБЫ СМОРЧКИ С/М",
+      "supplier_name": null,
+      "min_stock": 4.0,
+      "unit": null,
+      "needs_supplier": true,
+      "source": "Без поставщика"
+    },
+    {
+      "name": "ОГУРЦЫ свежие среднеплодные",
+      "category": "ГРИБЫ СМОРЧКИ С/М",
+      "supplier_name": null,
+      "min_stock": 5.0,
+      "unit": null,
+      "needs_supplier": true,
+      "source": "Без поставщика"
+    },
+    {
+      "name": "ОРЕХ ГРЕЦКИЙ Очищенный",
+      "category": "ГРИБЫ СМОРЧКИ С/М",
+      "supplier_name": null,
+      "min_stock": 0.5,
+      "unit": null,
+      "needs_supplier": true,
+      "source": "Без поставщика"
+    },
+    {
+      "name": "ОРЕХ КЕДРОВЫЙ",
+      "category": "ГРИБЫ СМОРЧКИ С/М",
+      "supplier_name": null,
+      "min_stock": 0.5,
+      "unit": null,
+      "needs_supplier": true,
+      "source": "Без поставщика"
+    },
+    {
+      "name": "ОРЕХ КЕШЬЮ свежий",
+      "category": "ГРИБЫ СМОРЧКИ С/М",
+      "supplier_name": null,
+      "min_stock": null,
+      "unit": null,
+      "needs_supplier": true,
+      "source": "Без поставщика"
+    },
+    {
+      "name": "ОРЕХ ФУНДУК целый",
+      "category": "ГРИБЫ СМОРЧКИ С/М",
+      "supplier_name": null,
+      "min_stock": null,
+      "unit": null,
+      "needs_supplier": true,
+      "source": "Без поставщика"
+    },
+    {
+      "name": "ПЕРЕЦ БОЛГАРСКИЙ КРАСНЫЙ свежий",
+      "category": "ГРИБЫ СМОРЧКИ С/М",
+      "supplier_name": null,
+      "min_stock": 7.0,
+      "unit": null,
+      "needs_supplier": true,
+      "source": "Без поставщика"
+    },
+    {
+      "name": "ПЕРЕЦ красный сушеный КРУПНОГО ПОМОЛА",
+      "category": "ГРИБЫ СМОРЧКИ С/М",
+      "supplier_name": null,
+      "min_stock": 2.0,
+      "unit": null,
+      "needs_supplier": true,
+      "source": "Без поставщика"
+    },
+    {
+      "name": "ПЕРЕЦ ОСТРЫЙ ХАЛАПЕНЬО стручковый свежий",
+      "category": "ГРИБЫ СМОРЧКИ С/М",
+      "supplier_name": null,
+      "min_stock": null,
+      "unit": null,
+      "needs_supplier": true,
+      "source": "Без поставщика"
+    },
+    {
+      "name": "ПЕРЕЦ ЧИЛИ КРАСНЫЙ свежий",
+      "category": "ГРИБЫ СМОРЧКИ С/М",
+      "supplier_name": null,
+      "min_stock": null,
+      "unit": null,
+      "needs_supplier": true,
+      "source": "Без поставщика"
+    },
+    {
+      "name": "ПЕТРУШКА свежая зелень",
+      "category": "ГРИБЫ СМОРЧКИ С/М",
+      "supplier_name": null,
+      "min_stock": 0.5,
+      "unit": null,
+      "needs_supplier": true,
+      "source": "Без поставщика"
+    },
+    {
+      "name": "РЕДИС свежий",
+      "category": "ГРИБЫ СМОРЧКИ С/М",
+      "supplier_name": null,
+      "min_stock": 2.0,
+      "unit": null,
+      "needs_supplier": true,
+      "source": "Без поставщика"
+    },
+    {
+      "name": "РЕДЬКА ЗЕЛЕНАЯ/ДАЙКОН свежая",
+      "category": "ГРИБЫ СМОРЧКИ С/М",
+      "supplier_name": null,
+      "min_stock": null,
+      "unit": null,
+      "needs_supplier": true,
+      "source": "Без поставщика"
+    },
+    {
+      "name": "РОЗМАРИН свежая зелень",
+      "category": "ГРИБЫ СМОРЧКИ С/М",
+      "supplier_name": null,
+      "min_stock": 0.2,
+      "unit": null,
+      "needs_supplier": true,
+      "source": "Без поставщика"
+    },
+    {
+      "name": "РОСТКИ ГОРОХА кудрявый",
+      "category": "ГРИБЫ СМОРЧКИ С/М",
+      "supplier_name": null,
+      "min_stock": 1.0,
+      "unit": null,
+      "needs_supplier": true,
+      "source": "Без поставщика"
+    },
+    {
+      "name": "РОСТКИ ЩАВЕЛЯ",
+      "category": "ГРИБЫ СМОРЧКИ С/М",
+      "supplier_name": null,
+      "min_stock": 0.5,
+      "unit": null,
+      "needs_supplier": true,
+      "source": "Без поставщика"
+    },
+    {
+      "name": "САЛАТ АЙСБЕРГ",
+      "category": "ГРИБЫ СМОРЧКИ С/М",
+      "supplier_name": null,
+      "min_stock": 4.0,
+      "unit": null,
+      "needs_supplier": true,
+      "source": "Без поставщика"
+    },
+    {
+      "name": "САЛАТ РУККОЛА весовая",
+      "category": "ГРИБЫ СМОРЧКИ С/М",
+      "supplier_name": null,
+      "min_stock": 1.0,
+      "unit": null,
+      "needs_supplier": true,
+      "source": "Без поставщика"
+    },
+    {
+      "name": "СВЕКЛА свежая",
+      "category": "ГРИБЫ СМОРЧКИ С/М",
+      "supplier_name": null,
+      "min_stock": 15.0,
+      "unit": null,
+      "needs_supplier": true,
+      "source": "Без поставщика"
+    },
+    {
+      "name": "СЕЛЬДЕРЕЯ СТЕБЕЛЬ свежий",
+      "category": "ГРИБЫ СМОРЧКИ С/М",
+      "supplier_name": null,
+      "min_stock": 1.0,
+      "unit": null,
+      "needs_supplier": true,
+      "source": "Без поставщика"
+    },
+    {
+      "name": "СЕМЕНА ЛЬНА",
+      "category": "ГРИБЫ СМОРЧКИ С/М",
+      "supplier_name": null,
+      "min_stock": 0.3,
+      "unit": null,
+      "needs_supplier": true,
+      "source": "Без поставщика"
+    },
+    {
+      "name": "СЕМЕНА ПОДСОЛНЕЧНИКА",
+      "category": "ГРИБЫ СМОРЧКИ С/М",
+      "supplier_name": null,
+      "min_stock": 0.3,
+      "unit": null,
+      "needs_supplier": true,
+      "source": "Без поставщика"
+    },
+    {
+      "name": "СЕМЕНА ТЫКВЕННЫЕ",
+      "category": "ГРИБЫ СМОРЧКИ С/М",
+      "supplier_name": null,
+      "min_stock": 0.3,
+      "unit": null,
+      "needs_supplier": true,
+      "source": "Без поставщика"
+    },
+    {
+      "name": "СЕМЕНА УКРОПА",
+      "category": "ГРИБЫ СМОРЧКИ С/М",
+      "supplier_name": null,
+      "min_stock": 0.2,
+      "unit": null,
+      "needs_supplier": true,
+      "source": "Без поставщика"
+    },
+    {
+      "name": "СЕМЕНА ФЕНХЕЛЯ",
+      "category": "ГРИБЫ СМОРЧКИ С/М",
+      "supplier_name": null,
+      "min_stock": 0.2,
+      "unit": null,
+      "needs_supplier": true,
+      "source": "Без поставщика"
+    },
+    {
+      "name": "СПАРЖА С/М",
+      "category": "ГРИБЫ СМОРЧКИ С/М",
+      "supplier_name": null,
+      "min_stock": 3.0,
+      "unit": null,
+      "needs_supplier": true,
+      "source": "Без поставщика"
+    },
+    {
+      "name": "СУХОФРУКТЫ СМЕСЬ",
+      "category": "ГРИБЫ СМОРЧКИ С/М",
+      "supplier_name": null,
+      "min_stock": 10.0,
+      "unit": null,
+      "needs_supplier": true,
+      "source": "Без поставщика"
+    },
+    {
+      "name": "ТИМЬЯН свежий/ЧАБРЕЦ",
+      "category": "ГРИБЫ СМОРЧКИ С/М",
+      "supplier_name": null,
+      "min_stock": 0.1,
+      "unit": null,
+      "needs_supplier": true,
+      "source": "Без поставщика"
+    },
+    {
+      "name": "ТОМАТЫ свежие",
+      "category": "ГРИБЫ СМОРЧКИ С/М",
+      "supplier_name": null,
+      "min_stock": 5.0,
+      "unit": null,
+      "needs_supplier": true,
+      "source": "Без поставщика"
+    },
+    {
+      "name": "ТОМАТЫ свежие РОЗОВЫЕ",
+      "category": "ГРИБЫ СМОРЧКИ С/М",
+      "supplier_name": null,
+      "min_stock": 10.0,
+      "unit": null,
+      "needs_supplier": true,
+      "source": "Без поставщика"
+    },
+    {
+      "name": "ТОМАТЫ свежие ЧЕРРИ",
+      "category": "ГРИБЫ СМОРЧКИ С/М",
+      "supplier_name": null,
+      "min_stock": 7.0,
+      "unit": null,
+      "needs_supplier": true,
+      "source": "Без поставщика"
+    },
+    {
+      "name": "ТЫКВА Батернат",
+      "category": "ГРИБЫ СМОРЧКИ С/М",
+      "supplier_name": null,
+      "min_stock": 12.0,
+      "unit": null,
+      "needs_supplier": true,
+      "source": "Без поставщика"
+    },
+    {
+      "name": "УКРОП свежий зелень",
+      "category": "ГРИБЫ СМОРЧКИ С/М",
+      "supplier_name": null,
+      "min_stock": 0.6,
+      "unit": null,
+      "needs_supplier": true,
+      "source": "Без поставщика"
+    },
+    {
+      "name": "ФРИ КАРТОФЕЛЬ заморож.",
+      "category": "ФИЗАЛИС",
+      "supplier_name": null,
+      "min_stock": 20.0,
+      "unit": null,
+      "needs_supplier": true,
+      "source": "Без поставщика"
+    },
+    {
+      "name": "ЧЕСНОК свежий",
+      "category": "ЦВЕТЫ СЪЕДОБНЫЕ",
+      "supplier_name": null,
+      "min_stock": 2.0,
+      "unit": null,
+      "needs_supplier": true,
+      "source": "Без поставщика"
+    },
+    {
+      "name": "ШИПОВНИК сушеный",
+      "category": "ЦВЕТЫ СЪЕДОБНЫЕ",
+      "supplier_name": null,
+      "min_stock": 5.0,
+      "unit": null,
+      "needs_supplier": true,
+      "source": "Без поставщика"
+    },
+    {
+      "name": "ШПИНАТ свежий",
+      "category": "ЦВЕТЫ СЪЕДОБНЫЕ",
+      "supplier_name": null,
+      "min_stock": 3.0,
+      "unit": null,
+      "needs_supplier": true,
+      "source": "Без поставщика"
+    },
+    {
+      "name": "ЯБЛОКИ свежие (зеленые ГРЭННИ)",
+      "category": "ШПИНАТ свежий МИНИ",
+      "supplier_name": null,
+      "min_stock": 5.0,
+      "unit": null,
+      "needs_supplier": true,
+      "source": "Без поставщика"
+    },
+    {
+      "name": "СЫР ГАУДА (ЭДАМ)",
+      "category": "СЛИВКИ ЖИДКИЕ 10%",
+      "supplier_name": null,
+      "min_stock": null,
+      "unit": null,
+      "needs_supplier": true,
+      "source": "Без поставщика"
+    },
+    {
+      "name": "СЫР МОЦАРЕЛЛА маленькие шарики в рассоле",
+      "category": "СЛИВКИ ЖИДКИЕ 10%",
+      "supplier_name": null,
+      "min_stock": null,
+      "unit": null,
+      "needs_supplier": true,
+      "source": "Без поставщика"
+    },
+    {
+      "name": "КВАС сухой",
+      "category": "ПРОЧИЕ ПРОДУКТЫ",
+      "supplier_name": null,
+      "min_stock": 10.0,
+      "unit": null,
+      "needs_supplier": true,
+      "source": "Без поставщика"
+    },
+    {
+      "name": "ДЕСЕРТ БОМБОЧКА",
+      "category": "ПОКУПНЫЕ ПОЛУФАБРИКАТЫ",
+      "supplier_name": null,
+      "min_stock": 50.0,
+      "unit": null,
+      "needs_supplier": true,
+      "source": "Без поставщика"
+    },
+    {
+      "name": "ТОРТ ЧИЗКЕЙК 120г",
+      "category": "ПОКУПНЫЕ ПОЛУФАБРИКАТЫ",
+      "supplier_name": null,
+      "min_stock": 50.0,
+      "unit": null,
+      "needs_supplier": true,
+      "source": "Без поставщика"
+    },
+    {
+      "name": "ДЕСЕРТ МЕДОВИК ГЦ",
+      "category": "ПОКУПНЫЕ ПОЛУФАБРИКАТЫ",
+      "supplier_name": null,
+      "min_stock": 50.0,
+      "unit": null,
+      "needs_supplier": true,
+      "source": "Без поставщика"
+    },
+    {
+      "name": "ПРИПРАВА ЗИРА (кумин)",
+      "category": "ПРИПРАВА",
+      "supplier_name": null,
+      "min_stock": null,
+      "unit": null,
+      "needs_supplier": true,
+      "source": "Без поставщика"
+    },
+    {
+      "name": "ПРИПРАВА ХМЕЛИ-СУНЕЛИ",
+      "category": "ПРИПРАВА",
+      "supplier_name": null,
+      "min_stock": null,
+      "unit": null,
+      "needs_supplier": true,
+      "source": "Без поставщика"
+    },
+    {
+      "name": "КОРЕНЬ ХРЕНА",
+      "category": "КРУПЫ",
+      "supplier_name": null,
+      "min_stock": 1.0,
+      "unit": null,
+      "needs_supplier": true,
+      "source": "Без поставщика"
+    },
+    {
+      "name": "ХОНДАШИ",
+      "category": "КРУПЫ",
+      "supplier_name": null,
+      "min_stock": 1.0,
+      "unit": null,
+      "needs_supplier": true,
+      "source": "Без поставщика"
+    },
+    {
+      "name": "ШИПОВНИК",
+      "category": "КРУПЫ",
+      "supplier_name": null,
+      "min_stock": 2.0,
+      "unit": null,
+      "needs_supplier": true,
+      "source": "Без поставщика"
+    },
+    {
+      "name": "ГОВЯДИНА \"ЧАК РОЛЛ\"",
+      "category": "Маленький",
+      "supplier_name": null,
+      "min_stock": null,
+      "unit": null,
+      "needs_supplier": true,
+      "source": "Без поставщика"
+    }
+  ],
+  "source_file": "Заказ кухне.xlsx",
+  "notes": {
+    "catalog_rows": 197,
+    "unassigned_sheet_rows": 113,
+    "test_orders_imported": false
+  }
+}
