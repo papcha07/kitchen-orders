@@ -1,7 +1,8 @@
-from datetime import datetime, timedelta, timezone
+from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
 import json, os, secrets
 from typing import Optional
+from zoneinfo import ZoneInfo
 
 from fastapi import FastAPI, Depends, HTTPException, Response, Query
 from fastapi.responses import FileResponse
@@ -10,7 +11,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from jose import jwt, JWTError
 from pwdlib import PasswordHash
 from pydantic import BaseModel, Field
-from sqlalchemy import Boolean, DateTime, Float, ForeignKey, Integer, String, Text, create_engine, or_
+from sqlalchemy import Boolean, Date, DateTime, Float, ForeignKey, Integer, String, Text, and_, create_engine, or_
 from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column, relationship, sessionmaker, Session
 
 DATABASE_URL = os.getenv('DATABASE_URL', 'postgresql+psycopg://kitchen:kitchen@db:5432/kitchen')
@@ -21,9 +22,13 @@ elif DATABASE_URL.startswith('postgresql://'):
 SECRET_KEY = os.getenv('SECRET_KEY', 'replace-this-secret-before-deploying')
 COOKIE_SECURE = os.getenv('COOKIE_SECURE', 'false').lower() == 'true'
 TOKEN_TTL_HOURS = int(os.getenv('TOKEN_TTL_HOURS', '12'))
+KITCHEN_TZ = ZoneInfo(os.getenv('KITCHEN_TIMEZONE', 'Asia/Krasnoyarsk'))
 engine = create_engine(DATABASE_URL, pool_pre_ping=True)
 SessionLocal = sessionmaker(bind=engine, autoflush=False, expire_on_commit=False)
 hasher = PasswordHash.recommended()
+
+def kitchen_today() -> date:
+    return datetime.now(KITCHEN_TZ).date()
 
 class Base(DeclarativeBase): pass
 
@@ -63,6 +68,7 @@ class Order(Base):
     id: Mapped[int]=mapped_column(primary_key=True)
     author_id: Mapped[int]=mapped_column(ForeignKey('users.id'), index=True)
     created_at: Mapped[datetime]=mapped_column(DateTime(timezone=True), default=lambda: datetime.now(timezone.utc), index=True)
+    planned_date: Mapped[Optional[date]]=mapped_column(Date, nullable=True, index=True)
     status: Mapped[str]=mapped_column(String(30), default='Отправлена', index=True)
     is_approved: Mapped[bool]=mapped_column(Boolean, default=False, nullable=False, index=True)
     comment: Mapped[Optional[str]]=mapped_column(Text, nullable=True)
@@ -90,9 +96,9 @@ class PasswordChangeIn(BaseModel): current_password: str; new_password: str = Fi
 class ProductIn(BaseModel): name: str; category: str; unit: Optional[str]=None; min_stock: Optional[float]=None; supplier_id: Optional[int]=None; active: bool=True
 class SupplierIn(BaseModel): name: str; active: bool=True
 class ItemIn(BaseModel): product_id: int; quantity: float=Field(gt=0); comment: Optional[str]=None
-class OrderIn(BaseModel): items: list[ItemIn]=Field(min_length=1); comment: Optional[str]=None
+class OrderIn(BaseModel): items: list[ItemIn]=Field(min_length=1); planned_date: date=Field(default_factory=kitchen_today); comment: Optional[str]=None
 class ItemStatusIn(BaseModel): status: str
-class OrderUpdate(BaseModel): items: list[ItemIn]=Field(min_length=1); comment: Optional[str]=None
+class OrderUpdate(BaseModel): items: list[ItemIn]=Field(min_length=1); planned_date: date; comment: Optional[str]=None
 class OrderApprovalIn(BaseModel): is_approved: bool
 
 app=FastAPI(title='Kitchen Orders API', version='1.0.0')
@@ -105,8 +111,20 @@ def get_db():
 
 def user_json(u: User): return {'id':u.id,'name':u.name,'login':u.login,'role':u.role,'active':u.active,'must_change_password':u.must_change_password,'created_at':u.created_at.isoformat() if u.created_at else None}
 def product_json(p: Product): return {'id':p.id,'name':p.name,'category':p.category,'unit':p.unit,'min_stock':p.min_stock,'supplier_id':p.supplier_id,'supplier_name':p.supplier.name if p.supplier else None,'source_supplier_label':p.source_supplier_label,'needs_supplier':p.needs_supplier,'active':p.active}
+def order_kitchen_date(o: Order) -> date:
+    if o.planned_date:
+        return o.planned_date
+    created = o.created_at
+    if created.tzinfo is None:
+        created = created.replace(tzinfo=timezone.utc)
+    return created.astimezone(KITCHEN_TZ).date()
+
+def validate_planned_date(planned: date, previous: Optional[date]=None):
+    if planned < kitchen_today() and planned != previous:
+        raise HTTPException(400, 'Дата закупки должна быть сегодня или позже')
+
 def order_json(o: Order):
-    return {'id':o.id,'author_id':o.author_id,'author_name':o.author.name,'created_at':o.created_at.isoformat(),'status':o.status,'is_approved':o.is_approved,'comment':o.comment,'items':[{'id':i.id,'product_id':i.product_id,'name':i.product_name,'category':i.category,'supplier_name':i.supplier_name,'quantity':i.quantity,'unit':i.unit,'comment':i.comment,'status':i.status} for i in o.items]}
+    return {'id':o.id,'author_id':o.author_id,'author_name':o.author.name,'created_at':o.created_at.isoformat(),'planned_date':order_kitchen_date(o).isoformat(),'status':o.status,'is_approved':o.is_approved,'comment':o.comment,'items':[{'id':i.id,'product_id':i.product_id,'name':i.product_name,'category':i.category,'supplier_name':i.supplier_name,'quantity':i.quantity,'unit':i.unit,'comment':i.comment,'status':i.status} for i in o.items]}
 
 from fastapi import Request
 def current_user(request: Request, db: Session=Depends(get_db)) -> User:
@@ -230,7 +248,8 @@ def update_user(user_id: int, body: UserUpdate, db: Session=Depends(get_db), u: 
 @app.post('/api/orders')
 def create_order(body: OrderIn, db: Session=Depends(get_db), u: User=Depends(require_role('souschef','chef'))):
     if len(body.items)>200: raise HTTPException(400,'В одной заявке может быть не более 200 позиций')
-    order=Order(author_id=u.id,status='Отправлена',is_approved=False,comment=body.comment)
+    validate_planned_date(body.planned_date)
+    order=Order(author_id=u.id,planned_date=body.planned_date,status='Отправлена',is_approved=False,comment=body.comment)
     db.add(order); db.flush()
     for entry in body.items:
         p=db.get(Product,entry.product_id)
@@ -247,6 +266,7 @@ def update_order(order_id: int, body: OrderUpdate, db: Session=Depends(get_db), 
     if order.status=='Отменена': raise HTTPException(400,'Отменённую заявку нельзя изменить')
     if any(item.status!='К заказу' for item in order.items):
         raise HTTPException(400,'Закупщик уже начал обработку. Изменения этой заявки заблокированы')
+    validate_planned_date(body.planned_date, order_kitchen_date(order))
     order.items.clear()
     db.flush()
     for entry in body.items:
@@ -254,6 +274,7 @@ def update_order(order_id: int, body: OrderUpdate, db: Session=Depends(get_db), 
         if not p or not p.active: raise HTTPException(400,'Один из товаров больше недоступен')
         order.items.append(OrderItem(product_id=p.id,product_name=p.name,category=p.category,supplier_name=p.supplier.name if p.supplier else (p.source_supplier_label or None),quantity=entry.quantity,unit=p.unit,comment=entry.comment,status='К заказу'))
     order.comment=body.comment
+    order.planned_date=body.planned_date
     order.status='Отправлена'
     order.is_approved=False
     db.commit(); db.refresh(order); return order_json(order)
@@ -275,10 +296,16 @@ def list_orders(status: str='', date_from: Optional[str]=None,date_to: Optional[
     if u.role=='provisioner': q=q.filter(Order.is_approved.is_(True))
     if status: q=q.filter(Order.status==status)
     if date_from:
-        try: q=q.filter(Order.created_at>=datetime.fromisoformat(date_from).replace(tzinfo=timezone.utc))
+        try:
+            start = date.fromisoformat(date_from)
+            start_at = datetime.combine(start, datetime.min.time(), tzinfo=KITCHEN_TZ).astimezone(timezone.utc)
+            q=q.filter(or_(Order.planned_date>=start, and_(Order.planned_date.is_(None), Order.created_at>=start_at)))
         except ValueError: raise HTTPException(400,'Неверная начальная дата')
     if date_to:
-        try: q=q.filter(Order.created_at<datetime.fromisoformat(date_to).replace(tzinfo=timezone.utc)+timedelta(days=1))
+        try:
+            end = date.fromisoformat(date_to)
+            end_at = datetime.combine(end + timedelta(days=1), datetime.min.time(), tzinfo=KITCHEN_TZ).astimezone(timezone.utc)
+            q=q.filter(or_(Order.planned_date<=end, and_(Order.planned_date.is_(None), Order.created_at<end_at)))
         except ValueError: raise HTTPException(400,'Неверная конечная дата')
     return [order_json(o) for o in q.order_by(Order.created_at.desc()).all()]
 
