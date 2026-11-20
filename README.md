@@ -39,6 +39,12 @@ docker compose exec -T db psql -U kitchen kitchen < kitchen-backup.sql
 
 Если меняли `POSTGRES_USER` или `POSTGRES_DB`, подставьте их значения в команды резервного копирования.
 
+## Развёртывание в Railway
+
+В репозитории есть корневой `Dockerfile` для Railway: он собирает React-интерфейс и FastAPI в один веб-сервис. В Railway добавьте к проекту отдельную базу PostgreSQL и подключите переменную базы к веб-сервису как `DATABASE_URL` (например, ссылкой `${{Postgres.DATABASE_URL}}`). Для сервиса задайте `SECRET_KEY` и новый `ADMIN_PASSWORD`, включите `COOKIE_SECURE=true` и задайте health check path `/api/health`. Не создавайте публичный доступ для базы данных.
+
+После первой успешной сборки создайте домен только для веб-сервиса в Settings → Networking. PostgreSQL и API доступны приложению через внутреннюю сеть Railway; браузеру нужен только веб-домен.
+
 ## Роли
 
 - **Шеф-повар:** все заявки, аккаунты и справочники; назначение поставщика товарам.

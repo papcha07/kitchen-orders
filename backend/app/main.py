@@ -4,6 +4,8 @@ import json, os, secrets
 from typing import Optional
 
 from fastapi import FastAPI, Depends, HTTPException, Response, Query
+from fastapi.responses import FileResponse
+from fastapi.staticfiles import StaticFiles
 from fastapi.middleware.cors import CORSMiddleware
 from jose import jwt, JWTError
 from pwdlib import PasswordHash
@@ -262,3 +264,17 @@ def cancel_order(order_id: int, db: Session=Depends(get_db), u: User=Depends(req
     order=db.get(Order,order_id)
     if not order: raise HTTPException(404,'Заявка не найдена')
     order.status='Отменена'; db.commit(); return order_json(order)
+
+# The Railway image includes the built React app and serves it from the same
+# origin as the API. Local Docker Compose continues to serve the UI via Nginx.
+FRONTEND_DIR = Path(__file__).resolve().parents[1] / 'frontend'
+ASSETS_DIR = FRONTEND_DIR / 'assets'
+if ASSETS_DIR.is_dir():
+    app.mount('/assets', StaticFiles(directory=ASSETS_DIR), name='assets')
+
+    @app.get('/{path:path}', include_in_schema=False)
+    def frontend(path: str):
+        requested = (FRONTEND_DIR / path).resolve()
+        if requested.is_relative_to(FRONTEND_DIR.resolve()) and requested.is_file():
+            return FileResponse(requested)
+        return FileResponse(FRONTEND_DIR / 'index.html')
