@@ -322,6 +322,18 @@ def update_checklist_entry(planned_date: date, entry_id: int, body: ChecklistEnt
     db.commit();db.refresh(entry)
     return checklist_entry_json(entry)
 
+@app.post('/api/checklists/{planned_date}/skip-remaining')
+def skip_remaining_checklist_entries(planned_date: date, db: Session=Depends(get_db), u: User=Depends(require_role('souschef'))):
+    validate_planned_date(planned_date)
+    checklist=db.query(DailyChecklist).filter_by(author_id=u.id,planned_date=planned_date).first()
+    if not checklist: raise HTTPException(404,'Чек-лист не найден')
+    if checklist.completed_at: raise HTTPException(400,'Список уже завершён')
+    pending=db.query(DailyChecklistEntry).filter_by(checklist_id=checklist.id,state='pending').all()
+    for entry in pending:
+        entry.state='skip';entry.quantity=None;entry.unit=None;entry.comment=None
+    db.commit();db.refresh(checklist)
+    return checklist_json(checklist)
+
 @app.post('/api/checklists/{planned_date}/submit')
 def submit_daily_checklist(planned_date: date, db: Session=Depends(get_db), u: User=Depends(require_role('souschef'))):
     validate_planned_date(planned_date)
