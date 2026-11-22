@@ -1,0 +1,1037 @@
+[
+  {
+    "name": "ГОВЯДИНА ДЛЯ БРИСКЕТА",
+    "category": "МЯСНЫЕ ПРОДУКТЫ",
+    "terminal_order": 1
+  },
+  {
+    "name": "ГОВЯДИНА РИБАЙ (толстый край) отруб",
+    "category": "МЯСНЫЕ ПРОДУКТЫ",
+    "terminal_order": 2
+  },
+  {
+    "name": "ГОВЯДИНА СТРИПЛОИН (ТОНКИЙ КРАЙ) отруб",
+    "category": "МЯСНЫЕ ПРОДУКТЫ",
+    "terminal_order": 3
+  },
+  {
+    "name": "ГОВЯДИНА ГОЛЯШКА",
+    "category": "МЯСНЫЕ ПРОДУКТЫ",
+    "terminal_order": 4
+  },
+  {
+    "name": "ГОВЯДИНА КОСТИ",
+    "category": "МЯСНЫЕ ПРОДУКТЫ",
+    "terminal_order": 5
+  },
+  {
+    "name": "ГОВЯДИНА СТРИПЛОИН мат. забой/Травяной откорм.",
+    "category": "МЯСНЫЕ ПРОДУКТЫ",
+    "terminal_order": 6
+  },
+  {
+    "name": "ГОВЯДИНА ГЛАЗНОЙ МУСКУЛ",
+    "category": "МЯСНЫЕ ПРОДУКТЫ",
+    "terminal_order": 7
+  },
+  {
+    "name": "ГОВЯДИНА ЯЗЫК",
+    "category": "МЯСНЫЕ ПРОДУКТЫ",
+    "terminal_order": 8
+  },
+  {
+    "name": "ГОВЯДИНА ВЫРЕЗКА",
+    "category": "МЯСНЫЕ ПРОДУКТЫ",
+    "terminal_order": 9
+  },
+  {
+    "name": "КУРИЦА БЕДРО БОЛЬШОЕ Б\\К",
+    "category": "МЯСНЫЕ ПРОДУКТЫ",
+    "terminal_order": 10
+  },
+  {
+    "name": "ГРУДКА КУРИНАЯ НА КОСТИ",
+    "category": "МЯСНЫЕ ПРОДУКТЫ",
+    "terminal_order": 11
+  },
+  {
+    "name": "ИНДЕЙКА БЕДРО на коже",
+    "category": "МЯСНЫЕ ПРОДУКТЫ",
+    "terminal_order": 12
+  },
+  {
+    "name": "КУРИЦА НАБОР ДЛЯ БУЛЬОНА",
+    "category": "МЯСНЫЕ ПРОДУКТЫ",
+    "terminal_order": 13
+  },
+  {
+    "name": "КУРИЦА ФИЛЕ",
+    "category": "МЯСНЫЕ ПРОДУКТЫ",
+    "terminal_order": 14
+  },
+  {
+    "name": "СВИНИНА РЕБРА СЫРЫЕ",
+    "category": "МЯСНЫЕ ПРОДУКТЫ",
+    "terminal_order": 15
+  },
+  {
+    "name": "СВИНИНА ШЕЯ С/М",
+    "category": "МЯСНЫЕ ПРОДУКТЫ",
+    "terminal_order": 16
+  },
+  {
+    "name": "СВИНИНА ГРУДИНА БЕКОН",
+    "category": "МЯСНЫЕ ПРОДУКТЫ",
+    "terminal_order": 17
+  },
+  {
+    "name": "СВИНИНА (САЛО)",
+    "category": "МЯСНЫЕ ПРОДУКТЫ",
+    "terminal_order": 18
+  },
+  {
+    "name": "УТКА ФИЛЕ грудки СМ",
+    "category": "МЯСНЫЕ ПРОДУКТЫ",
+    "terminal_order": 19
+  },
+  {
+    "name": "ФИЛЕ ИНДЕЙКИ",
+    "category": "МЯСНЫЕ ПРОДУКТЫ",
+    "terminal_order": 20
+  },
+  {
+    "name": "КОЛБАСА ПЕППЕРОНИ",
+    "category": "МЯСНЫЕ ПРОДУКТЫ",
+    "terminal_order": 21
+  },
+  {
+    "name": "ПЕЧЕНЬ КУРИНАЯ",
+    "category": "МЯСНЫЕ ПРОДУКТЫ",
+    "terminal_order": 22
+  },
+  {
+    "name": "ИНДЕЙКА ФИЛЕ грудки",
+    "category": "МЯСНЫЕ ПРОДУКТЫ",
+    "terminal_order": 23
+  },
+  {
+    "name": "БРУСНИКА С/М",
+    "category": "ФРУКТЫ, ОВОЩИ, ОРЕХИ",
+    "terminal_order": 24
+  },
+  {
+    "name": "ВИШНЯ С/М",
+    "category": "ФРУКТЫ, ОВОЩИ, ОРЕХИ",
+    "terminal_order": 25
+  },
+  {
+    "name": "ГРИБЫ БЕЛЫЕ СУХИЕ",
+    "category": "ФРУКТЫ, ОВОЩИ, ОРЕХИ",
+    "terminal_order": 26
+  },
+  {
+    "name": "ЛИСТЬЯ ЛАЙМ свежие",
+    "category": "ГРИБЫ СМОРЧКИ С/М",
+    "terminal_order": 27
+  },
+  {
+    "name": "ОБЛЕПИХА С/М",
+    "category": "ГРИБЫ СМОРЧКИ С/М",
+    "terminal_order": 28
+  },
+  {
+    "name": "ПЕРЕЦ красный сушеный КРУПНОГО ПОМОЛА",
+    "category": "ГРИБЫ СМОРЧКИ С/М",
+    "terminal_order": 29
+  },
+  {
+    "name": "СЕМЕНА УКРОПА",
+    "category": "ГРИБЫ СМОРЧКИ С/М",
+    "terminal_order": 30
+  },
+  {
+    "name": "СЕМЕНА ФЕНХЕЛЯ",
+    "category": "ГРИБЫ СМОРЧКИ С/М",
+    "terminal_order": 31
+  },
+  {
+    "name": "СМОРОДИНА ЧЕРНАЯ С/М",
+    "category": "ГРИБЫ СМОРЧКИ С/М",
+    "terminal_order": 32
+  },
+  {
+    "name": "СУХОФРУКТЫ СМЕСЬ",
+    "category": "ГРИБЫ СМОРЧКИ С/М",
+    "terminal_order": 33
+  },
+  {
+    "name": "ТИМЬЯН свежий/ЧАБРЕЦ",
+    "category": "ГРИБЫ СМОРЧКИ С/М",
+    "terminal_order": 34
+  },
+  {
+    "name": "ЯБЛОКИ свежие (зеленые ГРЭННИ)",
+    "category": "ШПИНАТ свежий МИНИ",
+    "terminal_order": 35
+  },
+  {
+    "name": "МАСЛО СЛИВОЧНОЕ RENFERLI 82,5%",
+    "category": "ЙОГУРТ ГРЕЧЕСКИЙ",
+    "terminal_order": 36
+  },
+  {
+    "name": "МОЛОКО дл.хр. 2,5%",
+    "category": "ЙОГУРТ ГРЕЧЕСКИЙ",
+    "terminal_order": 37
+  },
+  {
+    "name": "МОРОЖЕНОЕ пломбир",
+    "category": "МОЛОКО СГУЩЕННОЕ вареное",
+    "terminal_order": 38
+  },
+  {
+    "name": "СЛИВКИ ЖИДКИЕ 33% для кухни",
+    "category": "СЛИВКИ ЖИДКИЕ 10%",
+    "terminal_order": 39
+  },
+  {
+    "name": "СЛИВКИ ПЕТМОЛ 33%",
+    "category": "СЛИВКИ ЖИДКИЕ 10%",
+    "terminal_order": 40
+  },
+  {
+    "name": "СМЕТАНА 20%",
+    "category": "СЛИВКИ ЖИДКИЕ 10%",
+    "terminal_order": 41
+  },
+  {
+    "name": "СЫР БРИ",
+    "category": "СЛИВКИ ЖИДКИЕ 10%",
+    "terminal_order": 42
+  },
+  {
+    "name": "СЫР БРЫНЗА",
+    "category": "СЛИВКИ ЖИДКИЕ 10%",
+    "terminal_order": 43
+  },
+  {
+    "name": "СЫР МОЦАРЕЛЛА Profi Cheese",
+    "category": "СЛИВКИ ЖИДКИЕ 10%",
+    "terminal_order": 44
+  },
+  {
+    "name": "СЫР МОЦАРЕЛЛА бол. шарики в рассоле",
+    "category": "СЛИВКИ ЖИДКИЕ 10%",
+    "terminal_order": 45
+  },
+  {
+    "name": "СЫР ПАРМЕЗАН ДЖУГАС",
+    "category": "СЛИВКИ ЖИДКИЕ 10%",
+    "terminal_order": 46
+  },
+  {
+    "name": "СЫР ПЛАВЛЕНЫЙ",
+    "category": "СЛИВКИ ЖИДКИЕ 10%",
+    "terminal_order": 47
+  },
+  {
+    "name": "СЫР С ГОЛУБОЙ ПЛЕСЕНЬЮ",
+    "category": "СЛИВКИ ЖИДКИЕ 10%",
+    "terminal_order": 48
+  },
+  {
+    "name": "СЫР СУЛУГУНИ",
+    "category": "СЛИВКИ ЖИДКИЕ 10%",
+    "terminal_order": 49
+  },
+  {
+    "name": "СЫР ФЕТА Хохланд",
+    "category": "СЛИВКИ ЖИДКИЕ 10%",
+    "terminal_order": 50
+  },
+  {
+    "name": "СЫР-КРЕМ ТВОРОЖНЫЙ",
+    "category": "СЛИВКИ ЖИДКИЕ 10%",
+    "terminal_order": 51
+  },
+  {
+    "name": "МОЛОКО КОКОСОВОЕ",
+    "category": "СЛИВКИ ЖИДКИЕ 10%",
+    "terminal_order": 52
+  },
+  {
+    "name": "ИКРА СЕЛЬДИ",
+    "category": "РЫБНЫЕ ПРОДУКТЫ",
+    "terminal_order": 53
+  },
+  {
+    "name": "КАЛЬМАР ТУШКИ Чищенный",
+    "category": "РЫБНЫЕ ПРОДУКТЫ",
+    "terminal_order": 54
+  },
+  {
+    "name": "КАРКАСЫ РЫБНЫЕ",
+    "category": "РЫБНЫЕ ПРОДУКТЫ",
+    "terminal_order": 55
+  },
+  {
+    "name": "КИЛЬКА В РАССОЛЕ",
+    "category": "РЫБНЫЕ ПРОДУКТЫ",
+    "terminal_order": 56
+  },
+  {
+    "name": "КРЕВЕТКИ 26/30 ЧИЩЕННЫЕ",
+    "category": "РЫБНЫЕ ПРОДУКТЫ",
+    "terminal_order": 57
+  },
+  {
+    "name": "ЛОСОСЬ СМ филе на коже",
+    "category": "РЫБНЫЕ ПРОДУКТЫ",
+    "terminal_order": 58
+  },
+  {
+    "name": "МИДИИ в с/соку в створках",
+    "category": "РЫБНЫЕ ПРОДУКТЫ",
+    "terminal_order": 59
+  },
+  {
+    "name": "МЯСО МИДИЙ",
+    "category": "РЫБНЫЕ ПРОДУКТЫ",
+    "terminal_order": 60
+  },
+  {
+    "name": "МИНТАЙ СВ/М",
+    "category": "РЫБНЫЕ ПРОДУКТЫ",
+    "terminal_order": 61
+  },
+  {
+    "name": "СЕЛЬДЬ ФИЛЕ в масле",
+    "category": "РЫБНЫЕ ПРОДУКТЫ",
+    "terminal_order": 62
+  },
+  {
+    "name": "СКУМБРИЯ С/М",
+    "category": "РЫБНЫЕ ПРОДУКТЫ",
+    "terminal_order": 63
+  },
+  {
+    "name": "МИНТАЙ СВ/М",
+    "category": "РЫБНЫЕ ПРОДУКТЫ",
+    "terminal_order": 64
+  },
+  {
+    "name": "ТРЕСКА ФИЛЕ без кожи",
+    "category": "РЫБНЫЕ ПРОДУКТЫ",
+    "terminal_order": 65
+  },
+  {
+    "name": "ТУНЕЦ филе ЛОИН С/М",
+    "category": "РЫБНЫЕ ПРОДУКТЫ",
+    "terminal_order": 66
+  },
+  {
+    "name": "ГОРБУША ФИЛЕ НА КОЖЕ",
+    "category": "РЫБНЫЕ ПРОДУКТЫ",
+    "terminal_order": 67
+  },
+  {
+    "name": "ОКУНЬ МОРСКОЙ ФИЛЕ с\\м",
+    "category": "РЫБНЫЕ ПРОДУКТЫ",
+    "terminal_order": 68
+  },
+  {
+    "name": "ФОРЕЛЬ ФИЛЕ С\\С",
+    "category": "РЫБНЫЕ ПРОДУКТЫ",
+    "terminal_order": 69
+  },
+  {
+    "name": "БРОККОЛИ",
+    "category": "Грибы/ягоды замороженые",
+    "terminal_order": 70
+  },
+  {
+    "name": "ГРИБЫ БЕЛЫЕ",
+    "category": "Грибы/ягоды замороженые",
+    "terminal_order": 71
+  },
+  {
+    "name": "ОПЯТА С/М",
+    "category": "Грибы/ягоды замороженые",
+    "terminal_order": 72
+  },
+  {
+    "name": "ГРУЗДИ С,С",
+    "category": "Грибы/ягоды замороженые",
+    "terminal_order": 73
+  },
+  {
+    "name": "ОБЛЕПИХА СМ",
+    "category": "Грибы/ягоды замороженые",
+    "terminal_order": 74
+  },
+  {
+    "name": "ЧЕРНАЯ СМОРОДИНА СМ",
+    "category": "Грибы/ягоды замороженые",
+    "terminal_order": 75
+  },
+  {
+    "name": "БЕЛЫЙ ГРИБ СУХОЙ",
+    "category": "Грибы/ягоды замороженые",
+    "terminal_order": 76
+  },
+  {
+    "name": "КУКУРУЗА ПОЧАТКИ",
+    "category": "Грибы/ягоды замороженые",
+    "terminal_order": 77
+  },
+  {
+    "name": "ВИШНЯ см",
+    "category": "Грибы/ягоды замороженые",
+    "terminal_order": 78
+  },
+  {
+    "name": "БРУСНИКА с\\м",
+    "category": "Грибы/ягоды замороженые",
+    "terminal_order": 79
+  },
+  {
+    "name": "КЕТЧУП (Хайнс)",
+    "category": "Соусы",
+    "terminal_order": 80
+  },
+  {
+    "name": "СОУС ГОРЧИЧНЫЙ (Хайнс)",
+    "category": "Соусы",
+    "terminal_order": 81
+  },
+  {
+    "name": "СОУС УСТРИЧНЫЙ",
+    "category": "Соусы",
+    "terminal_order": 82
+  },
+  {
+    "name": "СОУС ТОНКАЦУ",
+    "category": "Соусы",
+    "terminal_order": 83
+  },
+  {
+    "name": "ПАСТА ТОМ ЯМ (для супа)",
+    "category": "Соусы",
+    "terminal_order": 84
+  },
+  {
+    "name": "СОУС ТЕРИЯКИ",
+    "category": "Соусы",
+    "terminal_order": 85
+  },
+  {
+    "name": "СОУС СОЕВЫЙ CHO",
+    "category": "Соусы",
+    "terminal_order": 86
+  },
+  {
+    "name": "СОУС РЫБНЫЙ (тайское меню)",
+    "category": "Соусы",
+    "terminal_order": 87
+  },
+  {
+    "name": "СОУС ШРИРАЧА",
+    "category": "Соусы",
+    "terminal_order": 88
+  },
+  {
+    "name": "ГОРЧИЦА в зернах",
+    "category": "Соусы",
+    "terminal_order": 89
+  },
+  {
+    "name": "СОУС ГАЛЬБИ BBQ",
+    "category": "Соусы",
+    "terminal_order": 90
+  },
+  {
+    "name": "ГОРЧИЦА Русская",
+    "category": "Соусы",
+    "terminal_order": 91
+  },
+  {
+    "name": "ТОМАТНАЯ ПАСТА ПОМИДОРКА",
+    "category": "Соусы",
+    "terminal_order": 92
+  },
+  {
+    "name": "СОУС КИМЧИ",
+    "category": "Соусы",
+    "terminal_order": 93
+  },
+  {
+    "name": "УКСУС ВИННЫЙ БЕЛЫЙ",
+    "category": "УКСУС БАЛЬЗАМИЧЕСКИЙ",
+    "terminal_order": 94
+  },
+  {
+    "name": "УКСУС 70% эссенция",
+    "category": "УКСУС БАЛЬЗАМИЧЕСКИЙ",
+    "terminal_order": 95
+  },
+  {
+    "name": "МАСЛО ВАСАБИ",
+    "category": "УКСУС БАЛЬЗАМИЧЕСКИЙ",
+    "terminal_order": 96
+  },
+  {
+    "name": "ЯЙЦО куриное ДЕРЕВЕНСКОЕ",
+    "category": "ПРОЧИЕ ПРОДУКТЫ",
+    "terminal_order": 97
+  },
+  {
+    "name": "ЯЙЦО ПЕРЕПЕЛИНОЕ",
+    "category": "ПРОЧИЕ ПРОДУКТЫ",
+    "terminal_order": 98
+  },
+  {
+    "name": "ЯЙЦО перепелиное",
+    "category": "ПРОЧИЕ ПРОДУКТЫ",
+    "terminal_order": 99
+  },
+  {
+    "name": "САХАР ТРОСТНИКОВЫЙ",
+    "category": "ПРОЧИЕ ПРОДУКТЫ",
+    "terminal_order": 100
+  },
+  {
+    "name": "САХАРНАЯ ПУДРА",
+    "category": "ПРОЧИЕ ПРОДУКТЫ",
+    "terminal_order": 101
+  },
+  {
+    "name": "КРАХМАЛ КУКУРУЗНЫЙ",
+    "category": "ПРОЧИЕ ПРОДУКТЫ",
+    "terminal_order": 102
+  },
+  {
+    "name": "КРАХМАЛ картофельный",
+    "category": "ПРОЧИЕ ПРОДУКТЫ",
+    "terminal_order": 103
+  },
+  {
+    "name": "ДРОЖЖИ прессованные",
+    "category": "ПРОЧИЕ ПРОДУКТЫ",
+    "terminal_order": 104
+  },
+  {
+    "name": "ВОДОРОСЛИ НОРИ",
+    "category": "ПРОЧИЕ ПРОДУКТЫ",
+    "terminal_order": 105
+  },
+  {
+    "name": "ПОПКОРН СВЧ СОЛЬ",
+    "category": "ПРОЧИЕ ПРОДУКТЫ",
+    "terminal_order": 106
+  },
+  {
+    "name": "СОЛЬ НИТРИТНАЯ",
+    "category": "ПРОЧИЕ ПРОДУКТЫ",
+    "terminal_order": 107
+  },
+  {
+    "name": "КРАХМАЛ КАРТОФЕЛЬНЫЙ",
+    "category": "ПРОЧИЕ ПРОДУКТЫ",
+    "terminal_order": 108
+  },
+  {
+    "name": "ДРОЖЖИ прессованные",
+    "category": "ПРОЧИЕ ПРОДУКТЫ",
+    "terminal_order": 109
+  },
+  {
+    "name": "КСАНТАН",
+    "category": "ПРОЧИЕ ПРОДУКТЫ",
+    "terminal_order": 110
+  },
+  {
+    "name": "КАПУСТА КВАШЕНАЯ",
+    "category": "ПРОЧИЕ ПРОДУКТЫ",
+    "terminal_order": 111
+  },
+  {
+    "name": "БУЛКА ДЛЯ БУРГЕРА",
+    "category": "МУКОМОЛЬНЫЕ ПРОДУКТЫ",
+    "terminal_order": 112
+  },
+  {
+    "name": "ЛАВАШ",
+    "category": "МУКОМОЛЬНЫЕ ПРОДУКТЫ",
+    "terminal_order": 113
+  },
+  {
+    "name": "МУКА МАНИТОБА",
+    "category": "МУКОМОЛЬНЫЕ ПРОДУКТЫ",
+    "terminal_order": 114
+  },
+  {
+    "name": "МУКА ПШЕНИЧНАЯ",
+    "category": "МУКОМОЛЬНЫЕ ПРОДУКТЫ",
+    "terminal_order": 115
+  },
+  {
+    "name": "МУКА РЖАНАЯ",
+    "category": "МУКОМОЛЬНЫЕ ПРОДУКТЫ",
+    "terminal_order": 116
+  },
+  {
+    "name": "МУКА ЦЕЛЬНОЗЕРНОВАЯ",
+    "category": "МУКОМОЛЬНЫЕ ПРОДУКТЫ",
+    "terminal_order": 117
+  },
+  {
+    "name": "МУКА СЕМОЛИНА \"Крупка\"",
+    "category": "МУКОМОЛЬНЫЕ ПРОДУКТЫ",
+    "terminal_order": 118
+  },
+  {
+    "name": "СОЛОД РЖАНОЙ ФЕРМЕНТ (ЧЕРНЫЙ)",
+    "category": "МУКОМОЛЬНЫЕ ПРОДУКТЫ",
+    "terminal_order": 119
+  },
+  {
+    "name": "СОЛОД РЖАНОЙ НЕФЕРМЕНТ",
+    "category": "МУКОМОЛЬНЫЕ ПРОДУКТЫ",
+    "terminal_order": 120
+  },
+  {
+    "name": "МАСЛО рафинированное",
+    "category": "МАСЛО, МАЙОНЕЗ",
+    "terminal_order": 121
+  },
+  {
+    "name": "МАСЛО ОЛИВКОВОЕ",
+    "category": "МАСЛО, МАЙОНЕЗ",
+    "terminal_order": 122
+  },
+  {
+    "name": "МАЙОНЕЗ ЛУКА",
+    "category": "МАСЛО, МАЙОНЕЗ",
+    "terminal_order": 123
+  },
+  {
+    "name": "МАСЛО КУНЖУТНОЕ",
+    "category": "МАСЛО, МАЙОНЕЗ",
+    "terminal_order": 124
+  },
+  {
+    "name": "МАРГАРИН",
+    "category": "МАСЛО, МАЙОНЕЗ",
+    "terminal_order": 125
+  },
+  {
+    "name": "МАСЛО ФРИТЮРНОЕ",
+    "category": "МАСЛО, МАЙОНЕЗ",
+    "terminal_order": 126
+  },
+  {
+    "name": "МАСЛО нерафинированное",
+    "category": "МАСЛО, МАЙОНЕЗ",
+    "terminal_order": 127
+  },
+  {
+    "name": "МАСЛО ТРЮФЕЛЬНОЕ",
+    "category": "МАСЛО, МАЙОНЕЗ",
+    "terminal_order": 128
+  },
+  {
+    "name": "ТЕСТО КАТАИФИ",
+    "category": "МАСЛО, МАЙОНЕЗ",
+    "terminal_order": 129
+  },
+  {
+    "name": "ГОРОШЕК КОНСЕРВ",
+    "category": "КОНСЕРВАЦИЯ",
+    "terminal_order": 130
+  },
+  {
+    "name": "КАПЕРСЫ консервированные",
+    "category": "КОНСЕРВАЦИЯ",
+    "terminal_order": 131
+  },
+  {
+    "name": "КАПЕРСЫ крупные на веточке",
+    "category": "КОНСЕРВАЦИЯ",
+    "terminal_order": 132
+  },
+  {
+    "name": "КОРНИШОНЫ МИНИ КОНСЕРВИРОВАННЫЕ",
+    "category": "КОНСЕРВАЦИЯ",
+    "terminal_order": 133
+  },
+  {
+    "name": "МАСЛИНЫ целые б/к черные",
+    "category": "КОНСЕРВАЦИЯ",
+    "terminal_order": 134
+  },
+  {
+    "name": "ОЛИВКИ ЗЕЛЕНЫЕ конс.",
+    "category": "КОНСЕРВАЦИЯ",
+    "terminal_order": 135
+  },
+  {
+    "name": "ПАТИССОНЫ КОНС",
+    "category": "КОНСЕРВАЦИЯ",
+    "terminal_order": 136
+  },
+  {
+    "name": "ПЕРЕЦ ХАЛАПЕНЬЮ ЗЕЛЕН РЕЗАН, КОНСЕРВ.",
+    "category": "КОНСЕРВАЦИЯ",
+    "terminal_order": 137
+  },
+  {
+    "name": "ПЕРЕЦ ХАЛАПЕНЬЮ КРАСНЫЙ РЕЗАН, КОНСЕРВ.",
+    "category": "КОНСЕРВАЦИЯ",
+    "terminal_order": 138
+  },
+  {
+    "name": "ТОМАТЫ ВЯЛЕНЫЕ",
+    "category": "КОНСЕРВАЦИЯ",
+    "terminal_order": 139
+  },
+  {
+    "name": "ТОМАТЫ КУБИК",
+    "category": "КОНСЕРВАЦИЯ",
+    "terminal_order": 140
+  },
+  {
+    "name": "ХРЕН КОНСЕРВИРОВАННЫЙ",
+    "category": "КОНСЕРВАЦИЯ",
+    "terminal_order": 141
+  },
+  {
+    "name": "ТУНЕЦ Консервированный",
+    "category": "КОНСЕРВАЦИЯ",
+    "terminal_order": 142
+  },
+  {
+    "name": "СУХАРИ ПАНКО",
+    "category": "ПРИПРАВА",
+    "terminal_order": 143
+  },
+  {
+    "name": "ПАНИРОВОЧНАЯ СМЕСЬ хруст. Гурмикс",
+    "category": "ПРИПРАВА",
+    "terminal_order": 144
+  },
+  {
+    "name": "ПРИПРАВА ПЕРЕЦ ЧЕРНЫЙ ГОРОШКОМ",
+    "category": "ПРИПРАВА",
+    "terminal_order": 145
+  },
+  {
+    "name": "ПРИПРАВА ЧЕСНОК ГРАНУЛИРОВАННЫЙ",
+    "category": "ПРИПРАВА",
+    "terminal_order": 146
+  },
+  {
+    "name": "ПРИПРАВА МОЖЖЕВЕЛОВЫЕ ЯГОДЫ",
+    "category": "ПРИПРАВА",
+    "terminal_order": 147
+  },
+  {
+    "name": "ПРИПРАВА СУМАХ",
+    "category": "ПРИПРАВА",
+    "terminal_order": 148
+  },
+  {
+    "name": "ПРИПРАВА КОРИЦА строганная",
+    "category": "ПРИПРАВА",
+    "terminal_order": 149
+  },
+  {
+    "name": "ПРИПРАВА ПЕРЕЦ ЧЕРНЫЙ молотый",
+    "category": "ПРИПРАВА",
+    "terminal_order": 150
+  },
+  {
+    "name": "ПРИПРАВА КОРИАНДР в зернах",
+    "category": "ПРИПРАВА",
+    "terminal_order": 151
+  },
+  {
+    "name": "ПРИПРАВА КОРИАНДР молотый",
+    "category": "ПРИПРАВА",
+    "terminal_order": 152
+  },
+  {
+    "name": "ПРИПРАВА АНИС звездочки (БАДЬЯН)",
+    "category": "ПРИПРАВА",
+    "terminal_order": 153
+  },
+  {
+    "name": "ПРИПРАВА ФЕНХЕЛЬ в зернах",
+    "category": "ПРИПРАВА",
+    "terminal_order": 154
+  },
+  {
+    "name": "ПРИПРАВА ДАШИДА",
+    "category": "ПРИПРАВА",
+    "terminal_order": 155
+  },
+  {
+    "name": "ПРИПРАВА ПАПРИКА",
+    "category": "ПРИПРАВА",
+    "terminal_order": 156
+  },
+  {
+    "name": "ПРИПРАВА КУРКУМА ЕК",
+    "category": "ПРИПРАВА",
+    "terminal_order": 157
+  },
+  {
+    "name": "ПРИПРАВА ХМЕЛИ-СУНЕЛИ",
+    "category": "ПРИПРАВА",
+    "terminal_order": 158
+  },
+  {
+    "name": "ПРИПРАВА ЛАВРОВЫЙ ЛИСТ",
+    "category": "ПРИПРАВА",
+    "terminal_order": 159
+  },
+  {
+    "name": "ПРИПРАВА ОРЕГАНО",
+    "category": "ПРИПРАВА",
+    "terminal_order": 160
+  },
+  {
+    "name": "ПРИПРАВА ПАПРИКА КОПЧЕНАЯ",
+    "category": "ПРИПРАВА",
+    "terminal_order": 161
+  },
+  {
+    "name": "ПРИПРАВА КУНЖУТ БЕЛЫЙ",
+    "category": "ПРИПРАВА",
+    "terminal_order": 162
+  },
+  {
+    "name": "ПРИПРАВА ЛАО",
+    "category": "ПРИПРАВА",
+    "terminal_order": 163
+  },
+  {
+    "name": "CПЕЦИИ БРИСКЕТ",
+    "category": "ПРИПРАВА",
+    "terminal_order": 164
+  },
+  {
+    "name": "СПЕЦИЯ СУМАХ",
+    "category": "ПРИПРАВА",
+    "terminal_order": 165
+  },
+  {
+    "name": "ВАСАБИ",
+    "category": "ПРИПРАВА",
+    "terminal_order": 166
+  },
+  {
+    "name": "СУХОЙ ДЕМИГЛАС",
+    "category": "ПРИПРАВА",
+    "terminal_order": 167
+  },
+  {
+    "name": "СОЛЬ НИТРИТНАЯ",
+    "category": "ПРИПРАВА",
+    "terminal_order": 168
+  },
+  {
+    "name": "СОЛЬ МОРСКАЯ",
+    "category": "ПРИПРАВА",
+    "terminal_order": 169
+  },
+  {
+    "name": "СОЛЬ КРУПНЫЙ ПОМОЛ",
+    "category": "ПРИПРАВА",
+    "terminal_order": 170
+  },
+  {
+    "name": "ПЕРЕЦ ЧИЛИ ХЛОПЬЯ",
+    "category": "ПРИПРАВА",
+    "terminal_order": 171
+  },
+  {
+    "name": "ФИСТАШКА дробленая 200 гр",
+    "category": "КОНДИТЕРСКОЕ СЫРЬЕ",
+    "terminal_order": 172
+  },
+  {
+    "name": "МУКА ЧЕРЕМУХИ",
+    "category": "КОНДИТЕРСКОЕ СЫРЬЕ",
+    "terminal_order": 173
+  },
+  {
+    "name": "ШОКОЛАД БРИКЕТ чёрный",
+    "category": "КОНДИТЕРСКОЕ СЫРЬЕ",
+    "terminal_order": 174
+  },
+  {
+    "name": "САХАРНАЯ ПУДРА",
+    "category": "КОНДИТЕРСКОЕ СЫРЬЕ",
+    "terminal_order": 175
+  },
+  {
+    "name": "МЕД ЦВЕТОЧНЫЙ",
+    "category": "КОНДИТЕРСКОЕ СЫРЬЕ",
+    "terminal_order": 176
+  },
+  {
+    "name": "САХАР ТРОСТНИКОВЫЙ",
+    "category": "КОНДИТЕРСКОЕ СЫРЬЕ",
+    "terminal_order": 177
+  },
+  {
+    "name": "САХАР",
+    "category": "КОНДИТЕРСКОЕ СЫРЬЕ",
+    "terminal_order": 178
+  },
+  {
+    "name": "РАЗРЫХЛИТЕЛЬ",
+    "category": "КОНДИТЕРСКОЕ СЫРЬЕ",
+    "terminal_order": 179
+  },
+  {
+    "name": "ВАНИЛЬНЫЙ САХАР",
+    "category": "КОНДИТЕРСКОЕ СЫРЬЕ",
+    "terminal_order": 180
+  },
+  {
+    "name": "КАКАО порошок",
+    "category": "КОНДИТЕРСКОЕ СЫРЬЕ",
+    "terminal_order": 181
+  },
+  {
+    "name": "ЖЕЛАТИН листовой",
+    "category": "КОНДИТЕРСКОЕ СЫРЬЕ",
+    "terminal_order": 182
+  },
+  {
+    "name": "ГРЕЦКИЙ ОРЕХ",
+    "category": "ОРЕХИ",
+    "terminal_order": 183
+  },
+  {
+    "name": "ФУНДУК",
+    "category": "ОРЕХИ",
+    "terminal_order": 184
+  },
+  {
+    "name": "КЕДРОВЫЙ ОРЕХ",
+    "category": "ОРЕХИ",
+    "terminal_order": 185
+  },
+  {
+    "name": "ГЕРКУЛЕС",
+    "category": "КРУПЫ",
+    "terminal_order": 186
+  },
+  {
+    "name": "ГРЕЧКА",
+    "category": "КРУПЫ",
+    "terminal_order": 187
+  },
+  {
+    "name": "КИНОА",
+    "category": "КРУПЫ",
+    "terminal_order": 188
+  },
+  {
+    "name": "ЛАПША ЯИЧНАЯ для рамена",
+    "category": "КРУПЫ",
+    "terminal_order": 189
+  },
+  {
+    "name": "ГОРОХ КРУПА",
+    "category": "КРУПЫ",
+    "terminal_order": 190
+  },
+  {
+    "name": "ПАСТА РИЗО",
+    "category": "КРУПЫ",
+    "terminal_order": 191
+  },
+  {
+    "name": "ПАСТА СПАГЕТТИ №13 БАВЕТТЕ",
+    "category": "КРУПЫ",
+    "terminal_order": 192
+  },
+  {
+    "name": "ПЕРЛОВКА",
+    "category": "КРУПЫ",
+    "terminal_order": 193
+  },
+  {
+    "name": "ПАСТА КАЗАРЕЧЧЕ",
+    "category": "КРУПЫ",
+    "terminal_order": 194
+  },
+  {
+    "name": "ПАСТА ПЕППЕ",
+    "category": "КРУПЫ",
+    "terminal_order": 195
+  },
+  {
+    "name": "КОРЕНЬ ХРЕНА",
+    "category": "КРУПЫ",
+    "terminal_order": 196
+  },
+  {
+    "name": "ХОНДАШИ",
+    "category": "КРУПЫ",
+    "terminal_order": 197
+  },
+  {
+    "name": "ШИПОВНИК",
+    "category": "КРУПЫ",
+    "terminal_order": 198
+  },
+  {
+    "name": "РИС КРУГЛЫЙ",
+    "category": "КРУПЫ",
+    "terminal_order": 199
+  },
+  {
+    "name": "РИС ЧЕРНЫЙ экстра",
+    "category": "КРУПЫ",
+    "terminal_order": 200
+  },
+  {
+    "name": "БАЛОНЧИК ДЛЯ СИФОНА (Soda)",
+    "category": "КОМПОТ СМЕСЬ",
+    "terminal_order": 201
+  },
+  {
+    "name": "БАЛОН ГАЗОВЫЙ",
+    "category": "КОМПОТ СМЕСЬ",
+    "terminal_order": 202
+  },
+  {
+    "name": "МОЛОЧНЫЙ БАТОН",
+    "category": "Маленький",
+    "terminal_order": 203
+  },
+  {
+    "name": "СОУС КУНЖУТНЫЙ",
+    "category": "ВРЕМЕННЫЕ ПОЗИЦИИ",
+    "terminal_order": 204
+  },
+  {
+    "name": "Сыр плавленный чеддер",
+    "category": "ВРЕМЕННЫЕ ПОЗИЦИИ",
+    "terminal_order": 205
+  },
+  {
+    "name": "СЫР соус ЧЕДДЕР",
+    "category": "ВРЕМЕННЫЕ ПОЗИЦИИ",
+    "terminal_order": 206
+  },
+  {
+    "name": "Ребра свиные деликатесные",
+    "category": "ВРЕМЕННЫЕ ПОЗИЦИИ",
+    "terminal_order": 207
+  }
+]

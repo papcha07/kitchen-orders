@@ -14,3 +14,61 @@
 @media(max-width:900px){.catalog-edit-row{grid-template-columns:repeat(3,minmax(0,1fr));align-items:end}.catalog-edit-name{grid-column:1/-1;align-self:auto}.catalog-edit-row .save-small{justify-self:start}.catalog-edit-field{min-width:0}}
 @media(max-width:600px){.order-plan-date{font-size:8px;padding:4px 6px}.product-picker-panel{padding:7px}.product-option{gap:7px;padding:8px}.product-option-meta{flex-basis:40%}.catalog-edit-row{grid-template-columns:1fr 1fr}.catalog-edit-name{grid-column:1/-1}.catalog-edit-row .save-small{justify-self:stretch;grid-column:1/-1}.catalog-edit-field{font-size:8px}.calendar-select-mode{max-width:none}}
 .unit-field{display:flex;flex-direction:column;gap:5px;min-width:0;color:#66766b;font-size:10px;font-weight:600}.unit-field>span{font-size:9px}.unit-field select,.unit-field input{width:100%;min-width:0;height:38px;border:1px solid #dfe6df;border-radius:8px;padding:0 9px;background:#fff;color:#405248;font-size:11px;outline:0}.unit-field select:focus,.unit-field input:focus{border-color:#83ac91;box-shadow:0 0 0 3px #edf5ef}.product-extra-controls{display:flex;flex-direction:column;gap:8px;margin-top:9px}.product-extra-controls .unit-field{display:grid;grid-template-columns:auto minmax(0,1fr);align-items:center;gap:7px}.product-extra-controls .unit-field>span{white-space:nowrap}.product-extra-controls .unit-field select{height:32px;font-size:10px}.product-extra-controls .unit-field input{grid-column:1/-1;height:32px}.product-extra-controls .inline-comment{margin-top:0}.editor-quantity-fields{align-items:end}.editor-quantity-fields .unit-field select{margin:0;height:40px}
+/* Daily terminal checklist and procurement overview */
+.checklist-progress{margin:0 0 20px;padding:16px 19px;display:flex;align-items:center;gap:20px}
+.checklist-progress>div:first-child{min-width:235px}
+.checklist-progress .eyebrow{margin:0 0 5px}
+.checklist-progress b,.checklist-progress small{display:block}
+.checklist-progress b{color:#304338;font-size:13px}
+.checklist-progress small{margin-top:4px;color:#859189;font-size:10px}
+.progress-track{height:8px;flex:1;overflow:hidden;border-radius:99px;background:#edf1ec}
+.progress-track i{display:block;height:100%;border-radius:inherit;background:#2f875d;transition:width .2s}
+.checklist-list{display:flex;flex-direction:column;gap:8px;padding-bottom:26px}
+.checklist-entry{display:grid;grid-template-columns:38px minmax(190px,1fr) minmax(340px,1.15fr) 100px;align-items:center;gap:14px;padding:13px 15px;background:#fff;border:1px solid #e5eae4;border-left:4px solid #dbe2db;border-radius:11px;transition:background .15s,border-color .15s}
+.checklist-entry.quantity{background:#f0f8f2;border-color:#d9ebde;border-left-color:#32865a}
+.checklist-entry.skip{background:#f5f6f4;border-color:#e5e8e3;border-left-color:#aab4ab}
+.checklist-entry.saving{opacity:.78}
+.checklist-number{width:31px;height:31px;display:grid;place-items:center;border-radius:9px;background:#f0f3ef;color:#7b887e;font-size:10px;font-weight:700}
+.checklist-entry.quantity .checklist-number{background:#dcefe2;color:#276e46}
+.checklist-entry.skip .checklist-number{background:#e7eae6;color:#6d786f}
+.checklist-main{min-width:0}
+.checklist-main h3{margin:5px 0 6px;color:#2e4035;font-size:12px;line-height:1.4;font-weight:700}
+.checklist-meta{display:flex;flex-wrap:wrap;gap:5px 12px;color:#869188;font-size:9px}
+.checklist-action{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:7px 9px}
+.checklist-quantity{display:grid;grid-template-columns:minmax(80px,1fr) 135px;align-items:center;gap:7px}
+.checklist-quantity>input,.checklist-comment{min-width:0;height:38px;border:1px solid #dfe6df;border-radius:8px;background:#fff;padding:0 9px;color:#33473a;font-size:11px;outline:0}
+.checklist-quantity>input:focus,.checklist-comment:focus{border-color:#83ac91;box-shadow:0 0 0 3px #edf5ef}
+.checklist-quantity .unit-field{display:flex;min-width:0}
+.checklist-quantity .unit-field>span{display:none}
+.checklist-quantity .unit-field select,.checklist-quantity .unit-field input{height:38px;margin:0}
+.checklist-comment{grid-column:1/-1;height:32px;font-size:10px}
+.skip-button{height:30px;min-width:92px;padding:0 8px;border:1px solid #e2e7e1;border-radius:7px;background:#fff;color:#708077;font-size:9px;font-weight:700}
+.skip-button:hover{border-color:#aab9ad;background:#f5f7f4}
+.skip-button.subtle{min-width:75px;color:#97a19a}
+.skip-mark{color:#66746a;font-size:11px;font-weight:700}
+.checklist-entry.skip .checklist-action{grid-template-columns:auto auto;justify-content:end}
+.checklist-entry.skip .text-button{font-size:10px}
+.checklist-state{justify-self:end;color:#a0aaa2;font-size:9px;text-align:right}
+.checklist-entry.quantity .checklist-state{color:#367650;font-weight:700}
+.checklist-entry.skip .checklist-state{color:#69776c;font-size:14px;font-weight:700}
+.order-summary-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:9px;margin:-8px 0 16px}
+.summary-tile{min-height:71px;padding:12px 14px;border:1px solid #e5e9e3;border-radius:11px;background:#fff;display:flex;align-items:center;justify-content:space-between;gap:10px}
+.summary-tile small{color:#78867c;font-size:10px}
+.summary-tile b{font-size:20px;color:#36473d}
+.summary-tile.gold{background:#fffaf0;border-color:#f2e9d5}.summary-tile.gold b{color:#a1762d}
+.summary-tile.rose{background:#fff6f4;border-color:#f0e1de}.summary-tile.rose b{color:#a56158}
+.summary-tile.green{background:#f1f8f3;border-color:#e0eee3}.summary-tile.green b{color:#32744b}
+.summary-tile.gray{background:#f8f9f7}.summary-tile.red{background:#fff5f4;border-color:#f2e0dd}.summary-tile.red b{color:#b45b51}
+.view-switch{width:max-content;display:flex;gap:3px;margin:0 0 12px;padding:3px;border:1px solid #e2e8e1;border-radius:9px;background:#f0f3ef}
+.view-switch button{display:flex;align-items:center;gap:6px;padding:7px 10px;border:0;border-radius:7px;background:transparent;color:#738077;font-size:10px}
+.view-switch button.active{background:#fff;color:#286747;box-shadow:0 1px 4px #15362214}
+.return-order{height:30px;padding:0 9px;border:1px solid #ead9d6;border-radius:7px;background:#fff8f6;color:#a85f55;font-size:9px;font-weight:700}
+.return-order:hover{background:#f9eae6}
+.order-card.needs-revision{border-color:#ead9d5}
+.approval-badge.revision{background:#fbede9;color:#a45d53}
+.revision-note{margin:10px 0;padding:9px 11px;border-radius:8px;background:#fff5f2;color:#80564e;font-size:10px;line-height:1.5}
+.supplier-xlsx{margin-left:auto;white-space:nowrap;padding:8px 10px;font-size:9px;text-decoration:none}
+.supplier-heading>.supplier-xlsx+svg{display:none}
+.order-card-meta span:nth-child(2),.order-card-meta span:nth-child(3){padding:4px 7px;border-radius:6px;background:#f4f6f3;color:#738078}
+@media(max-width:900px){.order-summary-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.checklist-entry{grid-template-columns:34px minmax(0,1fr) minmax(285px,1fr)}.checklist-state{grid-column:2/-1;justify-self:start}.checklist-action{grid-column:3;grid-row:1/3}}
+@media(max-width:700px){.checklist-progress{align-items:stretch;flex-direction:column;gap:10px;padding:13px}.checklist-progress>div:first-child{min-width:0}.checklist-entry{grid-template-columns:30px minmax(0,1fr);gap:8px 10px;padding:11px}.checklist-number{width:27px;height:27px}.checklist-main{grid-column:2}.checklist-action{grid-column:2;grid-row:auto;grid-template-columns:minmax(0,1fr) auto;width:100%}.checklist-quantity{grid-template-columns:minmax(70px,1fr) minmax(90px,120px)}.checklist-state{grid-column:2;grid-row:3;justify-self:start}.checklist-meta{font-size:8px}.checklist-main h3{font-size:11px}.order-summary-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}.summary-tile{min-height:58px;padding:9px}.summary-tile small{font-size:9px}.summary-tile b{font-size:17px}.supplier-heading{height:auto;min-height:58px;flex-wrap:wrap;padding:10px}.supplier-xlsx{margin-left:auto}.supplier-heading>svg{display:none}.order-card-meta{flex-wrap:wrap}.order-dock{left:0;padding:10px 12px;gap:8px}.dock-count{min-width:0;gap:7px}.dock-count small{max-width:48vw;line-height:1.35}.order-dock .primary{max-width:48%;padding:10px;font-size:10px}.return-order{font-size:9px}}

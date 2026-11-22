@@ -1,17 +1,19 @@
 from datetime import date, datetime, timedelta, timezone
+from io import BytesIO
 from pathlib import Path
-import json, os, secrets
+from urllib.parse import quote
+import json, os, secrets, re
 from typing import Optional
 from zoneinfo import ZoneInfo
 
 from fastapi import FastAPI, Depends, HTTPException, Response, Query
-from fastapi.responses import FileResponse
+from fastapi.responses import FileResponse, StreamingResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.middleware.cors import CORSMiddleware
 from jose import jwt, JWTError
 from pwdlib import PasswordHash
 from pydantic import BaseModel, Field
-from sqlalchemy import Boolean, Date, DateTime, Float, ForeignKey, Integer, String, Text, and_, create_engine, or_
+from sqlalchemy import Boolean, Date, DateTime, Float, ForeignKey, Integer, String, Text, UniqueConstraint, and_, create_engine, or_
 from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column, relationship, sessionmaker, Session
 
 DATABASE_URL = os.getenv('DATABASE_URL', 'postgresql+psycopg://kitchen:kitchen@db:5432/kitchen')
@@ -61,6 +63,8 @@ class Product(Base):
     needs_supplier: Mapped[bool]=mapped_column(Boolean, default=False, index=True)
     active: Mapped[bool]=mapped_column(Boolean, default=True, index=True)
     source_sheet: Mapped[Optional[str]]=mapped_column(String(80), nullable=True)
+    terminal_order: Mapped[Optional[int]]=mapped_column(Integer, nullable=True, index=True)
+    terminal_category: Mapped[Optional[str]]=mapped_column(String(160), nullable=True)
     supplier: Mapped[Optional[Supplier]]=relationship()
 
 class Order(Base):
@@ -71,6 +75,8 @@ class Order(Base):
     planned_date: Mapped[Optional[date]]=mapped_column(Date, nullable=True, index=True)
     status: Mapped[str]=mapped_column(String(30), default='Отправлена', index=True)
     is_approved: Mapped[bool]=mapped_column(Boolean, default=False, nullable=False, index=True)
+    requires_revision: Mapped[bool]=mapped_column(Boolean, default=False, nullable=False, index=True)
+    review_note: Mapped[Optional[str]]=mapped_column(Text, nullable=True)
     comment: Mapped[Optional[str]]=mapped_column(Text, nullable=True)
     author: Mapped[User]=relationship()
     items: Mapped[list['OrderItem']]=relationship(cascade='all, delete-orphan', order_by='OrderItem.id')
@@ -89,6 +95,32 @@ class OrderItem(Base):
     status: Mapped[str]=mapped_column(String(30), default='К заказу', index=True)
     product: Mapped[Optional[Product]]=relationship()
 
+class DailyChecklist(Base):
+    __tablename__='daily_checklists'
+    __table_args__=(UniqueConstraint('author_id','planned_date',name='uq_daily_checklists_author_date'),)
+    id: Mapped[int]=mapped_column(primary_key=True)
+    author_id: Mapped[int]=mapped_column(ForeignKey('users.id'), index=True)
+    planned_date: Mapped[date]=mapped_column(Date, index=True)
+    submitted_order_id: Mapped[Optional[int]]=mapped_column(ForeignKey('orders.id'), nullable=True)
+    created_at: Mapped[datetime]=mapped_column(DateTime(timezone=True), default=lambda: datetime.now(timezone.utc))
+    completed_at: Mapped[Optional[datetime]]=mapped_column(DateTime(timezone=True), nullable=True)
+    author: Mapped[User]=relationship()
+    entries: Mapped[list['DailyChecklistEntry']]=relationship(cascade='all, delete-orphan', order_by='DailyChecklistEntry.sort_order, DailyChecklistEntry.id')
+
+class DailyChecklistEntry(Base):
+    __tablename__='daily_checklist_entries'
+    __table_args__=(UniqueConstraint('checklist_id','sort_order',name='uq_checklist_sort_order'),)
+    id: Mapped[int]=mapped_column(primary_key=True)
+    checklist_id: Mapped[int]=mapped_column(ForeignKey('daily_checklists.id',ondelete='CASCADE'), index=True)
+    product_id: Mapped[int]=mapped_column(ForeignKey('products.id'), index=True)
+    sort_order: Mapped[int]=mapped_column(Integer, index=True)
+    category: Mapped[Optional[str]]=mapped_column(String(160), nullable=True)
+    state: Mapped[str]=mapped_column(String(20), default='pending', index=True)
+    quantity: Mapped[Optional[float]]=mapped_column(Float, nullable=True)
+    unit: Mapped[Optional[str]]=mapped_column(String(40), nullable=True)
+    comment: Mapped[Optional[str]]=mapped_column(Text, nullable=True)
+    product: Mapped[Product]=relationship()
+
 class LoginIn(BaseModel): login: str; password: str
 class UserIn(BaseModel): name: str; login: str; password: str = Field(min_length=8); role: str
 class UserUpdate(BaseModel): name: str; role: str; active: bool=True; password: Optional[str]=None
@@ -100,6 +132,8 @@ class OrderIn(BaseModel): items: list[ItemIn]=Field(min_length=1); planned_date:
 class ItemStatusIn(BaseModel): status: str
 class OrderUpdate(BaseModel): items: list[ItemIn]=Field(min_length=1); planned_date: date; comment: Optional[str]=None
 class OrderApprovalIn(BaseModel): is_approved: bool
+class OrderReturnIn(BaseModel): comment: str=Field(min_length=1,max_length=1000)
+class ChecklistEntryIn(BaseModel): state: str; quantity: Optional[float]=Field(default=None,gt=0); unit: Optional[str]=Field(default=None,max_length=40); comment: Optional[str]=Field(default=None,max_length=1000)
 
 app=FastAPI(title='Kitchen Orders API', version='1.0.0')
 app.add_middleware(CORSMiddleware, allow_origins=os.getenv('CORS_ORIGINS','http://localhost:8080').split(','), allow_credentials=True, allow_methods=['*'], allow_headers=['*'])
@@ -110,7 +144,7 @@ def get_db():
     finally: db.close()
 
 def user_json(u: User): return {'id':u.id,'name':u.name,'login':u.login,'role':u.role,'active':u.active,'must_change_password':u.must_change_password,'created_at':u.created_at.isoformat() if u.created_at else None}
-def product_json(p: Product): return {'id':p.id,'name':p.name,'category':p.category,'unit':p.unit,'min_stock':p.min_stock,'supplier_id':p.supplier_id,'supplier_name':p.supplier.name if p.supplier else None,'source_supplier_label':p.source_supplier_label,'needs_supplier':p.needs_supplier,'active':p.active}
+def product_json(p: Product): return {'id':p.id,'name':p.name,'category':p.category,'unit':p.unit,'min_stock':p.min_stock,'supplier_id':p.supplier_id,'supplier_name':p.supplier.name if p.supplier else None,'source_supplier_label':p.source_supplier_label,'needs_supplier':p.needs_supplier,'active':p.active,'terminal_order':p.terminal_order,'terminal_category':p.terminal_category}
 def order_kitchen_date(o: Order) -> date:
     if o.planned_date:
         return o.planned_date
@@ -124,7 +158,49 @@ def validate_planned_date(planned: date, previous: Optional[date]=None):
         raise HTTPException(400, 'Дата закупки должна быть сегодня или позже')
 
 def order_json(o: Order):
-    return {'id':o.id,'author_id':o.author_id,'author_name':o.author.name,'created_at':o.created_at.isoformat(),'planned_date':order_kitchen_date(o).isoformat(),'status':o.status,'is_approved':o.is_approved,'comment':o.comment,'items':[{'id':i.id,'product_id':i.product_id,'name':i.product_name,'category':i.category,'supplier_name':i.supplier_name,'quantity':i.quantity,'unit':i.unit,'comment':i.comment,'status':i.status} for i in o.items]}
+    return {'id':o.id,'author_id':o.author_id,'author_name':o.author.name,'created_at':o.created_at.isoformat(),'planned_date':order_kitchen_date(o).isoformat(),'status':o.status,'is_approved':o.is_approved,'requires_revision':o.requires_revision,'review_note':o.review_note,'comment':o.comment,'items':[{'id':i.id,'product_id':i.product_id,'name':i.product_name,'category':i.category,'supplier_name':i.supplier_name,'quantity':i.quantity,'unit':i.unit,'comment':i.comment,'status':i.status} for i in o.items]}
+
+def checklist_entry_json(entry: DailyChecklistEntry):
+    p=entry.product
+    return {'id':entry.id,'product_id':p.id,'name':p.name,'category':entry.category or p.terminal_category or p.category,'supplier_name':p.supplier.name if p.supplier else (p.source_supplier_label or None),'min_stock':p.min_stock,'default_unit':p.unit,'state':entry.state,'quantity':entry.quantity,'unit':entry.unit or p.unit,'comment':entry.comment,'sort_order':entry.sort_order,'active':p.active}
+
+def checklist_json(checklist: DailyChecklist):
+    entries=[checklist_entry_json(entry) for entry in checklist.entries]
+    return {'id':checklist.id,'planned_date':checklist.planned_date.isoformat(),'completed':checklist.completed_at is not None,'submitted_order_id':checklist.submitted_order_id,'total':len(entries),'reviewed':sum(e['state']!='pending' for e in entries),'entries':entries}
+
+def ensure_checklist(db: Session, user: User, planned: date) -> DailyChecklist:
+    checklist=db.query(DailyChecklist).filter_by(author_id=user.id,planned_date=planned).first()
+    if not checklist:
+        checklist=DailyChecklist(author_id=user.id,planned_date=planned)
+        db.add(checklist);db.flush()
+    if checklist.completed_at is None:
+        present={entry.sort_order for entry in checklist.entries}
+        terminal_path=Path(__file__).resolve().parents[1]/'terminal_catalog.json'
+        if not terminal_path.exists(): terminal_path=Path(__file__).resolve().parents[2]/'data'/'terminal_catalog.json'
+        terminal=json.loads(terminal_path.read_text(encoding='utf-8')) if terminal_path.exists() else []
+        products=db.query(Product).filter(Product.active.is_(True)).order_by(Product.id).all()
+        by_name={}
+        for p in products:by_name.setdefault(p.name.casefold(),[]).append(p)
+        terminal_names={item['name'].casefold() for item in terminal}
+        used={}
+        for item in terminal:
+            slot=item['terminal_order'];name=item['name'].casefold()
+            if slot in present:continue
+            candidates=by_name.get(name,[])
+            if not candidates:continue
+            category=item['category'].casefold()
+            matches=[p for p in candidates if p.category.casefold()==category or (p.terminal_category and p.terminal_category.casefold()==category)]
+            source=matches or candidates
+            index=used.get((name,category),0);p=source[min(index,len(source)-1)];used[(name,category)]=index+1
+            checklist.entries.append(DailyChecklistEntry(product_id=p.id,sort_order=slot,category=item['category'],state='pending'))
+            present.add(slot)
+        for p in products:
+            slot=1000000+p.id
+            if p.source_sheet is None and p.name.casefold() not in terminal_names and slot not in present:
+                checklist.entries.append(DailyChecklistEntry(product_id=p.id,sort_order=slot,category=p.category,state='pending'))
+                present.add(slot)
+    db.flush()
+    return checklist
 
 from fastapi import Request
 def current_user(request: Request, db: Session=Depends(get_db)) -> User:
@@ -148,17 +224,23 @@ def init_db():
     with SessionLocal() as db:
         if not db.query(User).filter(User.role=='chef').first():
             db.add(User(name=os.getenv('ADMIN_NAME','Шеф-повар'),login=os.getenv('ADMIN_LOGIN','admin'),password_hash=hasher.hash(os.getenv('ADMIN_PASSWORD','ChangeMe123!')),role='chef',active=True))
-        if not db.query(Product).first():
-            seed_path=Path(__file__).resolve().parents[1]/'seed.json'
-            if seed_path.exists():
-                data=json.loads(seed_path.read_text(encoding='utf-8'))
-                supplier_by_name={}
-                for name in data.get('suppliers',[]):
-                    s=Supplier(name=name); db.add(s); supplier_by_name[name]=s
-                db.flush()
-                for raw in data.get('products',[]):
-                    label=raw.get('supplier_name'); mapped=bool(label and label in supplier_by_name and not raw.get('needs_supplier'))
-                    db.add(Product(name=raw['name'],category=raw['category'],unit=raw.get('unit'),min_stock=raw.get('min_stock'),supplier_id=supplier_by_name[label].id if mapped else None,source_supplier_label=label,needs_supplier=not mapped,source_sheet=raw.get('source')))
+        seed_path=Path(__file__).resolve().parents[1]/'seed.json'
+        if seed_path.exists():
+            data=json.loads(seed_path.read_text(encoding='utf-8'))
+            supplier_by_name={s.name:s for s in db.query(Supplier).all()}
+            for name in data.get('suppliers',[]):
+                if name not in supplier_by_name:
+                    supplier_by_name[name]=Supplier(name=name);db.add(supplier_by_name[name])
+            db.flush()
+            existing_counts={}
+            for p in db.query(Product).all():existing_counts[p.name]=existing_counts.get(p.name,0)+1
+            seed_counts={}
+            for raw in data.get('products',[]):seed_counts[raw['name']]=seed_counts.get(raw['name'],0)+1
+            for raw in data.get('products',[]):
+                if existing_counts.get(raw['name'],0)>=seed_counts[raw['name']]: continue
+                label=raw.get('supplier_name'); mapped=bool(label and label in supplier_by_name and not raw.get('needs_supplier'))
+                db.add(Product(name=raw['name'],category=raw['category'],unit=raw.get('unit'),min_stock=raw.get('min_stock'),supplier_id=supplier_by_name[label].id if mapped else None,source_supplier_label=label,needs_supplier=not mapped,source_sheet=raw.get('source'),terminal_order=raw.get('terminal_order'),terminal_category=raw.get('terminal_category')))
+                existing_counts[raw['name']]=existing_counts.get(raw['name'],0)+1
         db.commit()
 
 @app.get('/api/health')
@@ -211,8 +293,58 @@ def update_product(product_id: int, body: ProductIn, db: Session=Depends(get_db)
     if not p: raise HTTPException(404,'Товар не найден')
     if body.supplier_id and not db.get(Supplier,body.supplier_id): raise HTTPException(400,'Поставщик не найден')
     for k,v in body.model_dump().items(): setattr(p,k,v)
+    if p.terminal_order is not None: p.terminal_category=body.category
     p.needs_supplier=body.supplier_id is None; p.source_supplier_label=None
     db.commit(); db.refresh(p); return product_json(p)
+
+@app.get('/api/checklists/{planned_date}')
+def get_daily_checklist(planned_date: date, db: Session=Depends(get_db), u: User=Depends(require_role('souschef'))):
+    validate_planned_date(planned_date)
+    checklist=ensure_checklist(db,u,planned_date)
+    db.commit();db.refresh(checklist)
+    return checklist_json(checklist)
+
+@app.patch('/api/checklists/{planned_date}/entries/{entry_id}')
+def update_checklist_entry(planned_date: date, entry_id: int, body: ChecklistEntryIn, db: Session=Depends(get_db), u: User=Depends(require_role('souschef'))):
+    checklist=db.query(DailyChecklist).filter_by(author_id=u.id,planned_date=planned_date).first()
+    if not checklist: raise HTTPException(404,'Чек-лист не найден')
+    if checklist.completed_at: raise HTTPException(400,'Список уже завершён')
+    entry=db.query(DailyChecklistEntry).filter_by(id=entry_id,checklist_id=checklist.id).first()
+    if not entry: raise HTTPException(404,'Позиция не найдена в этом списке')
+    next_unreviewed=db.query(DailyChecklistEntry).filter(DailyChecklistEntry.checklist_id==checklist.id,DailyChecklistEntry.state=='pending').order_by(DailyChecklistEntry.sort_order).first()
+    if next_unreviewed and entry.sort_order>next_unreviewed.sort_order: raise HTTPException(400,'Сначала пройдите предыдущие позиции списка')
+    if body.state not in ('pending','skip','quantity'): raise HTTPException(400,'Выберите количество или прочерк')
+    if body.state=='quantity' and (body.quantity is None or body.quantity<=0): raise HTTPException(400,'Введите количество больше нуля')
+    entry.state=body.state
+    entry.quantity=body.quantity if body.state=='quantity' else None
+    entry.unit=(body.unit.strip() if body.unit and body.unit.strip() else None) if body.state=='quantity' else None
+    entry.comment=(body.comment.strip() if body.comment and body.comment.strip() else None) if body.state=='quantity' else None
+    db.commit();db.refresh(entry)
+    return checklist_entry_json(entry)
+
+@app.post('/api/checklists/{planned_date}/submit')
+def submit_daily_checklist(planned_date: date, db: Session=Depends(get_db), u: User=Depends(require_role('souschef'))):
+    validate_planned_date(planned_date)
+    checklist=ensure_checklist(db,u,planned_date)
+    pending=sum(entry.state=='pending' for entry in checklist.entries)
+    if pending: raise HTTPException(400,f'Отметьте все позиции: осталось {pending}')
+    if checklist.completed_at:
+        order=db.get(Order,checklist.submitted_order_id) if checklist.submitted_order_id else None
+        return {'checklist':checklist_json(checklist),'order':order_json(order) if order else None}
+    order=None
+    selected=[entry for entry in checklist.entries if entry.state=='quantity']
+    if selected:
+        order=Order(author_id=u.id,planned_date=planned_date,status='Отправлена',is_approved=False)
+        db.add(order);db.flush()
+        for entry in selected:
+            p=db.get(Product,entry.product_id)
+            if not p or not p.active: raise HTTPException(400,'Одна из выбранных позиций больше недоступна. Обновите список.')
+            order.items.append(OrderItem(product_id=p.id,product_name=p.name,category=entry.category or p.terminal_category or p.category,supplier_name=p.supplier.name if p.supplier else (p.source_supplier_label or None),quantity=entry.quantity,unit=entry.unit or p.unit,comment=entry.comment,status='К заказу'))
+        checklist.submitted_order_id=order.id
+    checklist.completed_at=datetime.now(timezone.utc)
+    db.commit();db.refresh(checklist)
+    if order: db.refresh(order)
+    return {'checklist':checklist_json(checklist),'order':order_json(order) if order else None}
 
 @app.get('/api/suppliers')
 def suppliers(db: Session=Depends(get_db), u: User=Depends(current_user)):
@@ -277,17 +409,36 @@ def update_order(order_id: int, body: OrderUpdate, db: Session=Depends(get_db), 
     order.planned_date=body.planned_date
     order.status='Отправлена'
     order.is_approved=False
+    order.requires_revision=False
+    order.review_note=None
     db.commit(); db.refresh(order); return order_json(order)
 
 @app.patch('/api/orders/{order_id}/approval')
 def update_order_approval(order_id: int, body: OrderApprovalIn, db: Session=Depends(get_db), u: User=Depends(require_role('chef'))):
     order=db.get(Order,order_id)
     if not order: raise HTTPException(404,'Заявка не найдена')
+    if body.is_approved and order.author_id==u.id: raise HTTPException(403,'Нельзя согласовать собственную заявку')
     if order.status=='Отменена': raise HTTPException(400,'Отменённую заявку нельзя согласовать')
     if not body.is_approved and any(item.status!='К заказу' for item in order.items):
         raise HTTPException(400,'Закупщик уже начал обработку. Согласование нельзя снять')
     order.is_approved=body.is_approved
+    if body.is_approved:
+        order.requires_revision=False
+        order.review_note=None
     db.commit(); db.refresh(order); return order_json(order)
+
+@app.patch('/api/orders/{order_id}/return')
+def return_order_for_revision(order_id: int, body: OrderReturnIn, db: Session=Depends(get_db), u: User=Depends(require_role('chef'))):
+    order=db.get(Order,order_id)
+    if not order: raise HTTPException(404,'Заявка не найдена')
+    if order.author_id==u.id: raise HTTPException(403,'Нельзя вернуть собственную заявку')
+    if order.status=='Отменена': raise HTTPException(400,'Отменённую заявку нельзя вернуть')
+    if any(item.status!='К заказу' for item in order.items): raise HTTPException(400,'Закупщик уже начал обработку заявки')
+    order.is_approved=False
+    order.requires_revision=True
+    order.review_note=body.comment.strip()
+    db.commit();db.refresh(order)
+    return order_json(order)
 
 @app.get('/api/orders')
 def list_orders(status: str='', date_from: Optional[str]=None,date_to: Optional[str]=None, db: Session=Depends(get_db), u: User=Depends(current_user)):
@@ -308,6 +459,34 @@ def list_orders(status: str='', date_from: Optional[str]=None,date_to: Optional[
             q=q.filter(or_(Order.planned_date<=end, and_(Order.planned_date.is_(None), Order.created_at<end_at)))
         except ValueError: raise HTTPException(400,'Неверная конечная дата')
     return [order_json(o) for o in q.order_by(Order.created_at.desc()).all()]
+
+@app.get('/api/supplier-orders.xlsx')
+def export_supplier_orders(supplier_name: str=Query(min_length=1), planned_date: Optional[date]=None, db: Session=Depends(get_db), u: User=Depends(require_role('provisioner','chef'))):
+    from openpyxl import Workbook
+    from openpyxl.styles import Alignment, Font, PatternFill
+    orders=db.query(Order).filter(Order.is_approved.is_(True),Order.status!='Отменена').order_by(Order.planned_date,Order.id).all()
+    rows=[]
+    for order in orders:
+        day=order_kitchen_date(order)
+        if planned_date and day!=planned_date: continue
+        for item in order.items:
+            if (item.supplier_name or 'Без поставщика')==supplier_name:
+                rows.append((day,order.id,order.author.name,item.category,item.product_name,item.quantity,item.unit or '',item.comment or '',item.status))
+    if not rows: raise HTTPException(404,'Для этого поставщика нет согласованных позиций на выбранную дату')
+    workbook=Workbook();sheet=workbook.active;sheet.title='Заказ поставщику'
+    sheet.append(['Дата закупки','Заявка','Су-шеф','Категория','Товар','Количество','Единица','Комментарий','Статус'])
+    for cell in sheet[1]:
+        cell.font=Font(bold=True,color='FFFFFF');cell.fill=PatternFill('solid',fgColor='176849');cell.alignment=Alignment(vertical='center')
+    for row in rows: sheet.append([row[0].strftime('%d.%m.%Y'),*row[1:]])
+    sheet.freeze_panes='A2';sheet.auto_filter.ref=sheet.dimensions
+    for col,width in {'A':16,'B':12,'C':22,'D':28,'E':48,'F':16,'G':14,'H':38,'I':18}.items():sheet.column_dimensions[col].width=width
+    for row in sheet.iter_rows(min_row=2):
+        for cell in row:cell.alignment=Alignment(vertical='top',wrap_text=True)
+    content=BytesIO();workbook.save(content);content.seek(0)
+    slug=re.sub(r'[^\w.-]+','_',supplier_name,flags=re.UNICODE).strip('_') or 'supplier'
+    suffix=f'_{planned_date.isoformat()}' if planned_date else ''
+    filename=f'Заказ_{slug}{suffix}.xlsx'
+    return StreamingResponse(content,media_type='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',headers={'Content-Disposition':f"attachment; filename*=UTF-8''{quote(filename)}"})
 
 @app.patch('/api/order-items/{item_id}/status')
 def update_item_status(item_id: int, body: ItemStatusIn, db: Session=Depends(get_db), u: User=Depends(require_role('provisioner','chef'))):

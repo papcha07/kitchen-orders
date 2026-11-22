@@ -6,3 +6,4 @@ python-jose[cryptography]==3.4.0
 pwdlib[argon2]==0.2.1
 pydantic==2.11.3
 alembic==1.15.2
+openpyxl==3.1.5
