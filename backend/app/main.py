@@ -3,6 +3,7 @@ from io import BytesIO
 from pathlib import Path
 from urllib.parse import quote
 import json, os, secrets, re
+import unicodedata
 from typing import Optional
 from zoneinfo import ZoneInfo
 
@@ -121,6 +122,57 @@ class DailyChecklistEntry(Base):
     comment: Mapped[Optional[str]]=mapped_column(Text, nullable=True)
     product: Mapped[Product]=relationship()
 
+def supplier_key(value: str) -> str:
+    normalized=unicodedata.normalize('NFKC',value).casefold()
+    return re.sub(r'[\s\-‐‑‒–—]+','',normalized)
+
+SUPPLIER_CANONICAL_NAMES={
+    supplier_key('Элит Трейд'):'Элит Трейд',
+    supplier_key('Глобал Фуд'):'Глобал Фуд',
+    supplier_key('Метро'):'Метро',
+    supplier_key('Ментро'):'Метро',
+    supplier_key('Назаров ИП'):'Назаров ИП',
+    supplier_key('OZON'):'OZON',
+    supplier_key('Озон'):'OZON',
+    supplier_key('Элит Трейд / Восток-Запад'):'Элит Трейд / Восток-Запад',
+}
+
+def canonical_supplier_name(value: Optional[str]) -> Optional[str]:
+    if value is None: return None
+    name=unicodedata.normalize('NFKC',value).strip()
+    if not name: return None
+    return SUPPLIER_CANONICAL_NAMES.get(supplier_key(name),name)
+
+def normalize_supplier_records(db: Session) -> None:
+    groups={}
+    for supplier in db.query(Supplier).order_by(Supplier.id).all():
+        canonical=canonical_supplier_name(supplier.name)
+        if not canonical: continue
+        groups.setdefault(supplier_key(canonical),[]).append((supplier,canonical))
+    for records in groups.values():
+        canonical=records[0][1]
+        winner=next((supplier for supplier,name in records if supplier.name==name),records[0][0])
+        winner.name=canonical
+        winner.active=any(supplier.active for supplier,_ in records)
+        for supplier,_ in records:
+            if supplier.id==winner.id: continue
+            db.query(Product).filter(Product.supplier_id==supplier.id).update({Product.supplier_id:winner.id},synchronize_session=False)
+            supplier.active=False
+    db.flush()
+    supplier_by_key={}
+    for supplier in db.query(Supplier).order_by(Supplier.id).all():
+        key=supplier_key(supplier.name)
+        if key not in supplier_by_key or (supplier.active and not supplier_by_key[key].active): supplier_by_key[key]=supplier
+    for product in db.query(Product).all():
+        label=canonical_supplier_name(product.source_supplier_label)
+        supplier=supplier_by_key.get(supplier_key(label)) if label else None
+        product.source_supplier_label=supplier.name if supplier else label
+        if supplier and not product.supplier_id and not product.needs_supplier: product.supplier_id=supplier.id
+    for item in db.query(OrderItem).all():
+        label=canonical_supplier_name(item.supplier_name)
+        supplier=supplier_by_key.get(supplier_key(label)) if label else None
+        item.supplier_name=supplier.name if supplier else label
+
 class LoginIn(BaseModel): login: str; password: str
 class UserIn(BaseModel): name: str; login: str; password: str = Field(min_length=8); role: str
 class UserUpdate(BaseModel): name: str; role: str; active: bool=True; password: Optional[str]=None
@@ -222,15 +274,22 @@ def require_role(*roles):
 def init_db():
     Base.metadata.create_all(bind=engine)
     with SessionLocal() as db:
+        normalize_supplier_records(db)
         if not db.query(User).filter(User.role=='chef').first():
             db.add(User(name=os.getenv('ADMIN_NAME','Шеф-повар'),login=os.getenv('ADMIN_LOGIN','admin'),password_hash=hasher.hash(os.getenv('ADMIN_PASSWORD','ChangeMe123!')),role='chef',active=True))
         seed_path=Path(__file__).resolve().parents[1]/'seed.json'
         if seed_path.exists():
             data=json.loads(seed_path.read_text(encoding='utf-8'))
-            supplier_by_name={s.name:s for s in db.query(Supplier).all()}
-            for name in data.get('suppliers',[]):
-                if name not in supplier_by_name:
-                    supplier_by_name[name]=Supplier(name=name);db.add(supplier_by_name[name])
+            supplier_by_key={}
+            for supplier in db.query(Supplier).order_by(Supplier.id).all():
+                key=supplier_key(supplier.name)
+                if key not in supplier_by_key or (supplier.active and not supplier_by_key[key].active): supplier_by_key[key]=supplier
+            for raw_name in data.get('suppliers',[]):
+                name=canonical_supplier_name(raw_name)
+                if not name: continue
+                key=supplier_key(name)
+                if key not in supplier_by_key:
+                    supplier_by_key[key]=Supplier(name=name);db.add(supplier_by_key[key])
             db.flush()
             existing_counts={}
             for p in db.query(Product).all():existing_counts[p.name]=existing_counts.get(p.name,0)+1
@@ -238,9 +297,10 @@ def init_db():
             for raw in data.get('products',[]):seed_counts[raw['name']]=seed_counts.get(raw['name'],0)+1
             for raw in data.get('products',[]):
                 if existing_counts.get(raw['name'],0)>=seed_counts[raw['name']]: continue
-                label=raw.get('supplier_name'); mapped=bool(label and label in supplier_by_name and not raw.get('needs_supplier'))
-                db.add(Product(name=raw['name'],category=raw['category'],unit=raw.get('unit'),min_stock=raw.get('min_stock'),supplier_id=supplier_by_name[label].id if mapped else None,source_supplier_label=label,needs_supplier=not mapped,source_sheet=raw.get('source'),terminal_order=raw.get('terminal_order'),terminal_category=raw.get('terminal_category')))
+                label=canonical_supplier_name(raw.get('supplier_name')); supplier=supplier_by_key.get(supplier_key(label)) if label else None; mapped=bool(supplier and not raw.get('needs_supplier'))
+                db.add(Product(name=raw['name'],category=raw['category'],unit=raw.get('unit'),min_stock=raw.get('min_stock'),supplier_id=supplier.id if mapped else None,source_supplier_label=supplier.name if mapped else label,needs_supplier=not mapped,source_sheet=raw.get('source'),terminal_order=raw.get('terminal_order'),terminal_category=raw.get('terminal_category')))
                 existing_counts[raw['name']]=existing_counts.get(raw['name'],0)+1
+        normalize_supplier_records(db)
         db.commit()
 
 @app.get('/api/health')
@@ -364,9 +424,10 @@ def suppliers(db: Session=Depends(get_db), u: User=Depends(current_user)):
 
 @app.post('/api/suppliers')
 def create_supplier(body: SupplierIn, db: Session=Depends(get_db), u: User=Depends(require_role('chef'))):
-    name=body.name.strip()
+    name=canonical_supplier_name(body.name)
     if not name: raise HTTPException(400,'Укажите название поставщика')
-    if db.query(Supplier).filter(Supplier.name==name).first(): raise HTTPException(409,'Поставщик уже существует')
+    existing=next((supplier for supplier in db.query(Supplier).all() if supplier_key(supplier.name)==supplier_key(name)),None)
+    if existing: raise HTTPException(409,f'Поставщик уже существует: {canonical_supplier_name(existing.name)}')
     s=Supplier(name=name,active=body.active); db.add(s); db.commit(); db.refresh(s); return {'id':s.id,'name':s.name,'active':s.active}
 
 @app.get('/api/users')
