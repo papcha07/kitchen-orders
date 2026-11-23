@@ -389,6 +389,15 @@ def update_user(user_id: int, body: UserUpdate, db: Session=Depends(get_db), u: 
         x.password_hash=hasher.hash(body.password); x.must_change_password=True
     db.commit(); db.refresh(x); return user_json(x)
 
+@app.delete('/api/users/{user_id}')
+def delete_user(user_id: int, db: Session=Depends(get_db), u: User=Depends(require_role('chef'))):
+    x=db.get(User,user_id)
+    if not x: raise HTTPException(404,'Пользователь не найден')
+    if x.id==u.id: raise HTTPException(400,'Нельзя удалить свой аккаунт')
+    x.active=False
+    db.commit()
+    return {'ok':True,'user_id':x.id,'active':False}
+
 @app.post('/api/orders')
 def create_order(body: OrderIn, db: Session=Depends(get_db), u: User=Depends(require_role('souschef','chef'))):
     if len(body.items)>200: raise HTTPException(400,'В одной заявке может быть не более 200 позиций')
