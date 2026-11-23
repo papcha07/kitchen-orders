@@ -434,6 +434,23 @@ def update_order(order_id: int, body: OrderUpdate, db: Session=Depends(get_db), 
     order.review_note=None
     db.commit(); db.refresh(order); return order_json(order)
 
+@app.delete('/api/orders/{order_id}')
+def delete_order(order_id: int, db: Session=Depends(get_db), u: User=Depends(require_role('souschef','chef'))):
+    order=db.get(Order,order_id)
+    if not order: raise HTTPException(404,'Заявка не найдена')
+    if u.role=='souschef' and order.author_id!=u.id: raise HTTPException(403,'Можно удалить только свои заявки')
+    if any(item.status!='К заказу' for item in order.items):
+        raise HTTPException(400,'Закупщик уже начал обработку. Удаление заявки заблокировано')
+    # Unlock a completed daily checklist so its author can revise and submit it again.
+    linked_checklists=db.query(DailyChecklist).filter_by(submitted_order_id=order.id).all()
+    for checklist in linked_checklists:
+        checklist.submitted_order_id=None
+        checklist.completed_at=None
+    db.flush()
+    db.delete(order)
+    db.commit()
+    return {'ok':True,'order_id':order_id}
+
 @app.patch('/api/orders/{order_id}/approval')
 def update_order_approval(order_id: int, body: OrderApprovalIn, db: Session=Depends(get_db), u: User=Depends(require_role('chef'))):
     order=db.get(Order,order_id)

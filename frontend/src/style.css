@@ -138,3 +138,6 @@ button:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid 
 .archived-users>summary::-webkit-details-marker{display:none}
 .archived-users[open]>summary{border-bottom:1px solid #2b3a52}
 @media(max-width:700px){input,select,textarea{font-size:16px!important}.order-card-actions{justify-content:space-between}.order-collapse{font-size:9px;padding:7px}.user-row{flex-wrap:wrap}.user-main{flex:1 1 calc(100% - 48px)}.active-indicator{margin-left:39px}.user-actions{margin-left:auto}}
+.delete-order{display:inline-flex;align-items:center;justify-content:center;gap:5px;border:1px solid #70404b;border-radius:8px;padding:7px 9px;background:#38242d;color:#ff9aa4;font-size:10px;font-weight:700;white-space:nowrap}
+.delete-order:hover{border-color:#d86675;background:#482832;color:#ffc0c5}
+.delete-order:disabled{opacity:.45;cursor:not-allowed}
