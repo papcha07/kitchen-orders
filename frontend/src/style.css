@@ -87,6 +87,7 @@
 html,body,.app-shell{background:#0d1627;color:#e5ebf5}
 .topbar{background:rgba(14,22,39,.95);border-color:#26354c}
 .brand{color:#eef3fb}.brand-dot{color:#f49a4b}.brandmark{background:#ed761f;color:#fff}.role-pill,.pill{color:#bac6d9;background:#202d42;border-color:#34445e}
+.brandmark img{display:block;width:62%;height:62%;object-fit:contain}
 .user-chip{color:#dce4f1}.user-chip svg{color:#99a8bd}.avatar{color:#ffd3aa;background:#53351f}
 .sidebar{background:#101a2d;border-color:#26354c}.nav-label,.eyebrow{color:#91a0b7}.nav-item{color:#aab6ca}.nav-item svg{color:#8798b1}.nav-item.selected{background:#ed761f;color:#fff}.nav-item.selected svg,.nav-plus{color:#ffd2ac}
 .sidebar-tip{background:#18253a}.tip-icon{background:#27374f;color:#ffbd84}.sidebar-tip p{color:#a3b1c5}.sidebar-tip b{color:#e7edf6}.sidebar-bottom small{color:#8190a8}
