@@ -131,4 +131,9 @@ button:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid 
 .user-actions .delete-user:disabled{opacity:.45;color:#8391a7;cursor:not-allowed}
 .user-actions .restore-user{color:#39f576}
 .user-actions .user-password{color:#ffc08b}
+.quantity-cell{color:#39f576!important;font-weight:800!important;text-shadow:0 0 9px #39f57630}
+.archived-users{margin-top:14px;border-top:1px solid #2b3a52}
+.archived-users>summary{list-style:none;display:flex;justify-content:space-between;align-items:center;gap:10px;padding:14px 0;color:#aab8cc;font-size:11px;font-weight:700;cursor:pointer}
+.archived-users>summary::-webkit-details-marker{display:none}
+.archived-users[open]>summary{border-bottom:1px solid #2b3a52}
 @media(max-width:700px){input,select,textarea{font-size:16px!important}.order-card-actions{justify-content:space-between}.order-collapse{font-size:9px;padding:7px}.user-row{flex-wrap:wrap}.user-main{flex:1 1 calc(100% - 48px)}.active-indicator{margin-left:39px}.user-actions{margin-left:auto}}
